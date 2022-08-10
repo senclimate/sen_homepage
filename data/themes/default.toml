@@ -1,0 +1,35 @@
+# Theme metadata
+name = "default"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+## primary = "rgb(0, 136, 204)"
+primary = "#00d1b2"
+primary_light = "#00f1d2"
+primary_dark = "#00c4a7"
+
+# Links
+link = "#3273dc"
+link_hover = "rgb(54, 54, 54)"
+
+# Menu
+# menu_primary = "rgb(33, 37, 41)"
+# menu_text = "rgb(0, 136, 204)"
+# menu_text_active = "rgba(255,255,255,1)"
+# menu_title = "rgb(153, 153, 153)"
+
+menu_primary = "#3f51b5" # "rgb(13,46,110)" ## "#3f51b5" ## 13 46 111
+menu_text = "#fff"
+menu_text_active = "#ffeb3b"
+menu_title = "#fff"
+
+# Home sections
+# home_section_odd  = "rgb(29, 33, 39)"
+# home_section_even = "rgb(29, 33, 39)"
+
+home_section_odd = "rgb(255, 255, 255)"
+home_section_even = "rgb(247, 247, 247)"
+
+dark_menu_primary = "#ffeb3b"

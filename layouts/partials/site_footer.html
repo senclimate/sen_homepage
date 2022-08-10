@@ -1,0 +1,52 @@
+<footer class="site-footer">
+  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
+  <p class="powered-by">
+    {{ with site.GetPage "privacy.md" }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+    {{ end }}
+    {{ with site.GetPage "terms.md" }}
+      {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+    {{ end }}    
+  </p>
+  {{ end }}
+
+  <p class="powered-by">
+    {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; Sen Zhao {{ end }}
+  </p>
+
+  <p class="powered-by">
+    Powered with 
+    <a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy</a>
+  </p>
+
+    <span class="float-left" aria-hidden="true"> 
+      <script type="text/javascript"
+      src="//ra.revolvermaps.com/0/0/8.js?i=0gooo9eplxf&amp;m=1&amp;bv=95&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;z=0&amp;hi=30&amp;s=170"
+      async="async">
+      </script>
+
+      <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4235da10779dab6a14dca9029ead7ee5";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+
+     </span>
+
+    {{ if ne .Type "docs" }}
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    {{ end }}
+    
+</footer>
+
