@@ -9,5 +9,8 @@ featured: false
 publication: "**_Geophysical Research Letters_**, *46*(24), 14713–14722"
 doi: "10.1029/2019GL085320"
 tags: ["Paleclimate"]
+
+url_pdf: https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/2019GL085320
+
 ---
 
