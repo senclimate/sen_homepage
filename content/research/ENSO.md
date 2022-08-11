@@ -52,7 +52,6 @@ design:
 
 ---
 
-----------------
 {{<figure src="https://www.climate.gov/sites/default/files/2022-04/ENSO-states-viz.jpg" title="Sea surface temperature anomalies during El Niño and La Niña episodes. Credit: [Climate.gov](https://www.climate.gov/media/14414)" numbered="false" lightbox="false" width="95%" >}}
 
 ### <span style="color:ORANGERED"> ENSO dynamics</span>
@@ -64,5 +63,4 @@ design:
 {{< cite page="/publication/2022_li_grl_rechargeAsym" view="4" >}}
 {{< cite page="/publication/2020_jinff_agubook_enso" view="4" >}}
 
-----------------
 

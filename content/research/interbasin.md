@@ -31,7 +31,7 @@ image:
 projects: []
 ---
 
-----------------
+
 
 {{<figure src="https://revisionworld.com/sites/revisionworld.com/files/imce/el-nino.gif" numbered="false" lightbox="false" width="95%" >}}
 {{<figure src="https://revisionworld.com/sites/revisionworld.com/files/imce/el-nino2.gif" title="Walker circulation under the normal (upper) and El Niño (bottom) conditions. Credit: [Revision World](https://revisionworld.com/a2-level-level-revision/geography/synoptic-assessment-0/drought-and-its-teleconnection-enso)" numbered="false" lightbox="false" width="95%" >}}
@@ -43,5 +43,4 @@ understanding the interactions of Indian Ocean Dipole (IOD) and El Niño-Souther
 {{< cite page="/publication/2019_zhaos_grl_iod" view="4" >}}
 {{< cite page="/publication/2017_stuecker_grl_iod" view="4" >}}
 
-----------------
 

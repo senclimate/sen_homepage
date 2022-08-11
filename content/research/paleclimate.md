@@ -31,7 +31,6 @@ image:
 projects: []
 ---
 
-----------------
 
 ### <span style="color:ORANGERED"> Collaborative research </span>
 
@@ -42,5 +41,4 @@ projects: []
 {{< cite page="/publication/2015_shif_cc_palo" view="4" >}}
 {{< cite page="/publication/2014_shif_qs_palo" view="4" >}}
 
-----------------
 

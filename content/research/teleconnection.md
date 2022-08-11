@@ -31,7 +31,6 @@ image:
 projects: []
 ---
 
-----------------
 
 ### <span style="color:ORANGERED">Stationary Rossby wave propagation theory on a non-uniform flow </span>
 
@@ -45,5 +44,4 @@ Rossby wave propagation is responsible for the large-scale atmospheric teleconne
 
 {{< cite page="/publication/2016_zhaos_sr_hd" view="4" >}}
 
-----------------
 
