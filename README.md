@@ -1,6 +1,6 @@
 ## About
 
-Sen Zhao's Homepage using [**Academic**](https://sourcethemes.com/academic/).
+Sen Zhao's Homepage using [**Wowchemy**](https://wowchemy.com/).
 
 ## License
 

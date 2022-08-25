@@ -7,7 +7,7 @@ authors: ["Feng Shi", "Cheng Sun", "Antoine Guion", "Antoine Guion", "Qiuzhen Yi
 publication_types: ["2"]
 abstract: ""
 featured: false
-publication: "**_Journal of Geophysical Research: Atmospheres_**, "
+publication: "**_Journal of Geophysical Research: Atmospheres_**, 127(16), e2021JD035832"
 doi: "10.1029/2021JD035832"
 tags: ["Paleclimate"]
 
