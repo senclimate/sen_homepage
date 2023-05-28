@@ -99,4 +99,4 @@ user_groups:
 
 My research focuses on the large-scale climate variability and change and their impacts. I am interested in understanding the physical mechanisms governing the ocean-atmosphere system, so we can make better prediction and projection of the future climate. I am also interested in atmospheric teleconnections and their impacts on regional climate variability and extreme weather. My tools include theoretical approaches, statistical analysis, machine learning and hierarchies of climate modeling, ranging from simple models to the state-of-the-art earth system models. More details can be found in [Research]({{< ref "/research" >}}) and [Publications]({{< ref "/publication" >}}). 
 
-Here is my {{< staticref "cv_sen.pdf" "newtab" >}}CV{{< /staticref >}} (updated 10/2021).
+Here is my {{< staticref "cv_sen.pdf" "newtab" >}}CV{{< /staticref >}} (updated 05/2023).
