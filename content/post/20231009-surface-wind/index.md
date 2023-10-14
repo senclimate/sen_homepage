@@ -112,7 +112,7 @@ v = wind_m['v10'][::dlat, ::dlon]
 
 fig, ax = sp.map_subplots(1, 1, figsize=(10, 5), proj='robin', lon_0=200, aspect=1.2, layout='compressed')
 
-quiver_scale = 40        # 20 m/s corresponds to 1 inch on the plot
+quiver_scale = 40        # 40 m/s corresponds to 1 inch on the plot
 quiver_key_length = 10   # The reference arrow in the legend represents 10 m/s
 
 Q = ax.quiver(u.lon, u.lat, u.values, v.values, scale=quiver_scale, scale_units='inches',
