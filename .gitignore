@@ -1,2 +1,8 @@
 public/
 .idea/
+
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+__pycache__/
