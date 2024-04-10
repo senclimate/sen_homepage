@@ -8,4 +8,4 @@ else
 	git commit -u -m "update: $1"
 fi
 
-git push origin master
+git push origin main
