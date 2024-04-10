@@ -36,9 +36,11 @@ projects: []
 {{<figure src="https://revisionworld.com/sites/revisionworld.com/files/imce/el-nino.gif" numbered="false" lightbox="false" width="95%" >}}
 {{<figure src="https://revisionworld.com/sites/revisionworld.com/files/imce/el-nino2.gif" title="Walker circulation under the normal (upper) and El Niño (bottom) conditions. Credit: [Revision World](https://revisionworld.com/a2-level-level-revision/geography/synoptic-assessment-0/drought-and-its-teleconnection-enso)" numbered="false" lightbox="false" width="95%" >}}
 
-### <span style="color:ORANGERED"> IOD  </span>
-understanding the interactions of Indian Ocean Dipole (IOD) and El Niño-Southern Oscillation (ENSO), with a practical application to improve IOD predictability.
+### <span style="color:ORANGERED"> Pantropical SST predictability </span>
 
+{{< cite page="/publication/2024_zhaos_nature_XRO" view="4" >}}
+
+Understanding the interactions of Indian Ocean Dipole (IOD) and El Niño-Southern Oscillation (ENSO), with a practical application to improve IOD predictability.
 {{< cite page="/publication/2020_zhaos_waf_nmme" view="4" >}}
 {{< cite page="/publication/2019_zhaos_grl_iod" view="4" >}}
 {{< cite page="/publication/2017_stuecker_grl_iod" view="4" >}}

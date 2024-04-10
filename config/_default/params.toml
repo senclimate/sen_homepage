@@ -91,7 +91,7 @@ show_related = {docs = false, page = false, post = true, project = true, publica
 
 # Enter contact details (optional). To hide a field, clear it to "".
 email = "zhaos@hawaii.edu"
-phone = "+1 (808) 956-7010"
+phone = "+1 (808) 956-7110"
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )

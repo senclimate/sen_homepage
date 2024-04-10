@@ -22,9 +22,9 @@ bio: []
 
 interests:
 - Climate Dynamics and Predictability
-- Ocean-Atmosphere Interactions
+- El Niño–Southern Oscillation
+- Pantropical Climate Interactions
 - Atmospheric Waves & Teleconnections
-- ENSO and Inter-basin Interactions
 - Paleoclimate
 
 #- Ocean-Atmosphere Interactions
@@ -51,18 +51,21 @@ social:
 # - icon: twitter
 #   icon_pack: fab
 #   link: https://twitter.com/GeorgeCushen
+- icon: orcid
+  icon_pack: fab
+  link: https://orcid.org/0000-0002-5597-1109
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=DSWiT8wAAAAJ
-- icon: publons
-  icon_pack: ai
-  link: https://publons.com/researcher/2177739/sen-zhao/
 - icon: researchgate
   icon_pack: ai
   link: https://www.researchgate.net/profile/Sen-Zhao-3
-- icon: orcid
+- icon: researcherid
   icon_pack: ai
-  link: https://orcid.org/0000-0002-5597-1109
+  link: https://publons.com/researcher/2177739/sen-zhao/
+- icon: github
+  icon_pack: fab
+  link: https://github.com/senclimate
 - icon: cv
   icon_pack: ai
   link: cv_sen.pdf
@@ -99,4 +102,4 @@ user_groups:
 
 My research focuses on the large-scale climate variability and change and their impacts. I am interested in understanding the physical mechanisms governing the ocean-atmosphere system, so we can make better prediction and projection of the future climate. I am also interested in atmospheric teleconnections and their impacts on regional climate variability and extreme weather. My tools include theoretical approaches, statistical analysis, machine learning and hierarchies of climate modeling, ranging from simple models to the state-of-the-art earth system models. More details can be found in [Research]({{< ref "/research" >}}) and [Publications]({{< ref "/publication" >}}). 
 
-Here is my {{< staticref "cv_sen.pdf" "newtab" >}}CV{{< /staticref >}} (updated 05/2023).
+<!-- Here is my {{< staticref "cv_sen.pdf" "newtab" >}}CV{{< /staticref >}}. -->
