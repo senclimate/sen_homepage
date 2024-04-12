@@ -27,7 +27,7 @@ interests:
 - Atmospheric Waves & Teleconnections
 - Paleoclimate
 
-#- Ocean-Atmosphere Interactions
+# - Ocean-Atmosphere Interactions
 # - Climate modes like El Niño, Indian Ocean Dipole, Pacific Decadal Oscillation
 # - Paleoclimate, Global Warming and Climate Change
 # - El Niño–Southern Oscillation (ENSO), Indian Ocean Dipole (IOD), Pacific Decadal Oscillation (PDO)
@@ -100,6 +100,10 @@ user_groups:
 
 ---
 
-My research focuses on the large-scale climate variability and change and their impacts. I am interested in understanding the physical mechanisms governing the ocean-atmosphere system, so we can make better prediction and projection of the future climate. I am also interested in atmospheric teleconnections and their impacts on regional climate variability and extreme weather. My tools include theoretical approaches, statistical analysis, machine learning and hierarchies of climate modeling, ranging from simple models to the state-of-the-art earth system models. More details can be found in [Research]({{< ref "/research" >}}) and [Publications]({{< ref "/publication" >}}). 
+I am a climate scientist specializing in dynamics and impacts of large-scale climate variability and change. 
+
+I have a broad interest in understanding the multi-scale interactions of the Earth system, encompassing the atmosphere, ocean, cryosphere, and land surface. Additionally, I explore the societal implications of climate teleconnections and their effects on regional climates and extreme events. Leveraging our understanding of the physical mechanisms governing these interactions, we aim to enhance our ability to predict future climate changes and their impacts. For more details on my research, see [Research]({{< ref "/research" >}}) and [Publications]({{< ref "/publication" >}}).
+
+My tools include theoretical approaches, statistical analysis, machine learning and hierarchies of climate modeling, ranging from simple models to the state-of-the-art earth system models.  
 
 <!-- Here is my {{< staticref "cv_sen.pdf" "newtab" >}}CV{{< /staticref >}}. -->
