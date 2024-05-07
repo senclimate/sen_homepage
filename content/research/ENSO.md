@@ -1,7 +1,7 @@
 ---
 title: "El Niño-Southern Oscillation"
 subtitle: "Dynamics, Complexity, Predictability, and Future Changes"
-summary: "What"
+summary: "ENSO is most promienet"
 authors: ["senzhao"]
 
 date: 2022-08-10T00:00:00Z
@@ -54,6 +54,9 @@ design:
 
 {{<figure src="https://www.climate.gov/sites/default/files/2022-04/ENSO-states-viz.jpg" title="Sea surface temperature anomalies during El Niño and La Niña episodes. Credit: [Climate.gov](https://www.climate.gov/media/14414)" numbered="false" lightbox="false" width="95%" >}}
 
+ENSO is most 
+
+Relevant References
 ### <span style="color:ORANGERED"> ENSO predictability</span>
 {{< cite page="/publication/2024_zhaos_nature_XRO" view="4" >}}
 

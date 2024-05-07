@@ -2,7 +2,7 @@
 # Slider widget.
 widget = "slider"
 headless = true  # This file represents a page section.
-active = false    # Activate this widget? true/false
+active = true    # Activate this widget? true/false
 weight = 1       # Order that this section will appear.
 
 # Slide interval.
@@ -19,7 +19,7 @@ height = "calc(30vh - 70px)"
 [[item]]
   title = "Enhanced and Explainable El Niño Predictability"
   content =  """
-  <p><strong><span style='color: yellow;'><em>Our research just published online in Nature!</em></span> </strong></p>
+  <p><strong><span style='color: yellow;'><em>Our research just accepted in Nature!</em></span> </strong></p>
   <a href='publication/2024_zhaos_nature_xro/' class='btn btn-light'> Learn more 
   </a>
   <a href='https://github.com/senclimate/XRO' class='btn btn-light'>

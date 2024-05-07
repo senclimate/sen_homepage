@@ -16,7 +16,7 @@ publishDate: 2024-04-10T01:50:18.496584Z
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "**_Nature_**, under review after minor revision"
+publication: "**_Nature_**, in press"
 publication_short: ""
 
 abstract: "The El Niño-Southern Oscillation (ENSO) provides most of the global seasonal climate forecast skill, yet, quantifying the sources of skilful predictions is a long-standing challenge. Different sources of predictability affect ENSO evolution, leading to distinct global impacts. Artificial Intelligence (AI) forecasts offer promising advancements but linking their skill to specific physical processes is not yet possible, limiting our understanding of the dynamics underpinning the advancements. Here we show that an extended nonlinear recharge oscillator (XRO) model exhibits skilful ENSO forecasts at lead-times up to 16-18 months, better than global climate models and comparable to the most skilful AI forecasts. The XRO parsimoniously incorporates the core ENSO dynamics and ENSO’s seasonally modulated interactions with other modes of variability in the global oceans. The intrinsic enhancement of ENSO’s long-range forecast skill is traceable to the initial conditions of other climate modes via their memory and interactions with ENSO and is quantifiable in terms of these modes’ contributions to ENSO amplitude. Reforecasts using the XRO trained on climate model output show that reduced biases in both model ENSO dynamics and in climate mode interactions can lead to more skilful ENSO forecasts. The XRO framework's holistic treatment of ENSO's global multi-timescale interactions highlights promising targets for improving ENSO simulations and forecasts."
