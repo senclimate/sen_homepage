@@ -54,9 +54,8 @@ design:
 
 {{<figure src="https://www.climate.gov/sites/default/files/2022-04/ENSO-states-viz.jpg" title="Sea surface temperature anomalies during El Niño and La Niña episodes. Credit: [Climate.gov](https://www.climate.gov/media/14414)" numbered="false" lightbox="false" width="95%" >}}
 
-ENSO is most 
+The El Niño-Southern Oscillation (ENSO) is the most prominent driver of seasonal-to-interannual climate variability on Earth, significantly influencing global weather & climate patterns, ecosystems, and economic systems. Reliable predictions and future projections are cruial for preparing and mitigating its widespread effects. We use hierarchies of climate modeling together with observational analyses to reveal ENSO multiscale dynamics and sources of ENSO predictability. We built the conceptual extended nonlinear Recharge Oscillator (XRO) model to both predict ENSO events and quantify the various sources of ENSO predictability from climate mode interactions.
 
-Relevant References
 ### <span style="color:ORANGERED"> ENSO predictability</span>
 {{< cite page="/publication/2024_zhaos_nature_XRO" view="4" >}}
 
