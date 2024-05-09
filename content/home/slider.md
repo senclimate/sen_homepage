@@ -22,7 +22,7 @@ height = "calc(32vh - 70px)"
   <p><strong><span style='font-size: 16px; color: yellow;'><em>Enhanced and Explainable El Niño Predictability</em></span> </strong></p>
   <a href='publication/2024_zhaos_nature_xro/' class='btn btn-light'> Learn more 
   </a>
-  <a href='https://github.com/senclimate/XRO' class='btn btn-light'>
+  <a href='https://doi.org/10.5281/zenodo.10681114' class='btn btn-light'>
       <i class='fab fa-github'></i> Code
   </a>
   <a href='https://doi.org/10.5281/zenodo.10951443' class='btn btn-light'>
