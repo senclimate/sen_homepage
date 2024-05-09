@@ -1,13 +1,13 @@
 ---
 title: "Explainable El Niño predictability from climate mode interactions"
 authors: ["**Sen Zhao**", "Fei-Fei Jin", "Malte F. Stuecker", "Philip R. Thompson", "Jong-Seong Kug", "Mike J. McPhaden", "Mark A. Cane", "Andrew T. Wittenberg", "Wenju Cai"]
-date: 2024-04-10
+date: 2024-05-07
 doi: ""
 first_author: true
 
 
 # Schedule page publish date (NOT publication's date).
-publishDate: 2024-04-10T01:50:18.496584Z
+publishDate: 2024-05-07T01:50:18.496584Z
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
