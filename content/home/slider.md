@@ -11,7 +11,7 @@ interval = 2000
 
 # Slide height (optional).
 # E.g. `500px` for 500 pixels or `calc(100vh - 70px)` for full screen.
-height = "calc(30vh - 70px)"
+height = "calc(25vh - 70px)"
 
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
@@ -19,7 +19,7 @@ height = "calc(30vh - 70px)"
 [[item]]
   title = "Enhanced and Explainable El Niño Predictability"
   content =  """
-  <p><strong><span style='color: yellow;'><em>Our research just accepted in Nature!</em></span> </strong></p>
+  <p><strong><span style='font-size: 28px; color: yellow;'><em>Our research just accepted in Nature!</em></span> </strong></p>
   <a href='publication/2024_zhaos_nature_xro/' class='btn btn-light'> Learn more 
   </a>
   <a href='https://github.com/senclimate/XRO' class='btn btn-light'>
