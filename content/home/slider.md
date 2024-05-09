@@ -11,7 +11,7 @@ interval = 2000
 
 # Slide height (optional).
 # E.g. `500px` for 500 pixels or `calc(100vh - 70px)` for full screen.
-height = "calc(32vh - 70px)"
+height = "calc(25vh - 70px)"
 
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
@@ -19,9 +19,7 @@ height = "calc(32vh - 70px)"
 [[item]]
   title = "Our research just accepted in Nature! "
   content =  """
-  <p><strong><span style='font-size: 16px; color: yellow;'><em>Enhanced and Explainable El Niño Predictability</em></span> </strong></p>
-  <a href='publication/2024_zhaos_nature_xro/' class='btn btn-light'> Learn more 
-  </a>
+  <p><strong><span style='font-size: 16px; color: yellow;'><em> <a href="publication/2024_zhaos_nature_xro">Enhanced and Explainable El Niño Predictability</a> </em></span> </strong></p>
   <a href='https://doi.org/10.5281/zenodo.10681114' class='btn btn-light'>
       <i class='fab fa-github'></i> Code
   </a>
