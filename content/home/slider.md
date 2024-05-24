@@ -7,7 +7,7 @@ weight = 1       # Order that this section will appear.
 
 # Slide interval.
 # Use `false` to disable animation or enter a time in ms, e.g. `5000` (5s).
-interval = 2000
+interval = 5000
 
 # Slide height (optional).
 # E.g. `500px` for 500 pixels or `calc(100vh - 70px)` for full screen.
@@ -25,6 +25,34 @@ height = "calc(40vh - 70px)"
   </a>
   <a href='https://doi.org/10.5281/zenodo.10951443' class='btn btn-light'>
       <i class='fas fa-cloud'></i> Dataset
+  </a>
+  """
+  align = "center"  # Choose `center`, `left`, or `right`.
+
+  # Overlay a color or image (optional).
+  #   Deactivate an option by commenting out the line, prefixing it with `#`.
+  # overlay_color = "#145A32"  # An HTML color value.
+  # overlay_filter = 0.9  # Darken the image. Value in range 0-1.
+  
+  overlay_color = "#1453b4"
+  overlay_filter = 0.95
+  overlay_img = "BigIsland_2.jpg"  # Image path relative to your `static/img/` folder.
+
+  # # Call to action button (optional).
+  # #   Activate the button by specifying a URL and button label below.
+  # #   Deactivate by commenting out parameters, prefixing lines with `#`.
+  # cta_label = "See our paper"
+  # cta_url = "https://sourcethemes.com/academic/"
+  # cta_icon_pack = "fas"
+  # cta_icon = "github"
+
+[[item]]
+  title = "Our proposal secures funding from the U.S. NSF"
+  content =  """
+  <p><strong><span style='font-size: 16px; color: yellow;'><em>Dynamics and predictability of coastal El Nino events, and implications for ENSO diversity </em></span> </strong></p>
+  <a href='https://www.christinakaramperidou.com/' class='btn btn-light'> Lead PI C. Karamperidou 
+  </a>
+  <a href='https://senzhao.netlify.app/' class='btn btn-light'> co-PI S. Zhao
   </a>
   """
   align = "center"  # Choose `center`, `left`, or `right`.
