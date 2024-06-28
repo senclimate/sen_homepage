@@ -17,15 +17,28 @@ height = "calc(40vh - 70px)"
 # Duplicate an `[[item]]` block to add more slides.
 
 [[item]]
-  title = "Our research just accepted in Nature! "
+  title = "Our research just published in Nature! "
   content =  """
-  <p><strong><span style='font-size: 16px; color: yellow;'><em> <a href="publication/2024_zhaos_nature_xro">Enhanced and Explainable El Niño Predictability</a> </em></span> </strong></p>
-  <a href='https://doi.org/10.5281/zenodo.10681114' class='btn btn-light'>
-      <i class='fab fa-github'></i> Code
-  </a>
-  <a href='https://doi.org/10.5281/zenodo.10951443' class='btn btn-light'>
-      <i class='fas fa-cloud'></i> Dataset
-  </a>
+<p><strong><span style='font-size: 16px; color: yellow;'><em> <a href="publication/2024_zhaos_nature_xro" style="color: yellow;">El Niño forecasts extended to 18 months with physics-based model</a> </em></span> </strong></p>
+<a href='https://www.nature.com/articles/s41586-024-07534-6' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #f0e68c; border-color: #ffd700;'>
+    Online
+</a>
+<a href='https://rdcu.be/dLZxC' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #98fb98; border-color: #32cd32;'>
+    PDF
+</a>
+<a href='https://doi.org/10.5281/zenodo.10681114' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #afeeee; border-color: #00ced1;'>
+    <i class='fab fa-github'></i>Code
+</a>
+<a href='https://doi.org/10.5281/zenodo.10951443' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #d8bfd8; border-color: #dda0dd;'>
+    <i class='fas fa-cloud'></i>Dataset
+</a>
+<a href='https://www.soest.hawaii.edu/soestwp/announce/news/el-nino-forecasts-18-months/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #ffb6c1; border-color: #ff69b4;'>
+    SOEST news
+</a>
+<a href='https://paper.sciencenet.cn/htmlpaper/2024/6/202462717022913106082.shtm' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #add8e6; border-color: #87ceeb;'>
+    科学网
+</a>
+
   """
   align = "center"  # Choose `center`, `left`, or `right`.
 
