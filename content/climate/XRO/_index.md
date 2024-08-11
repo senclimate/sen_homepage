@@ -54,13 +54,13 @@ type: book  # Do not modify.
   select {
     cursor: pointer;
   }
-    #image-display {
+  #image-display {
     text-align: center; /* Centers the content inside this div */
-    padding: 20px; /* Adds some padding around the content */
+    padding: 10px; /* Adds some padding around the content */
   }
 
   #selectedImage {
-    width: 80%; /* Sets the image width to 80% of its container */
+    width: 99%; /* Sets the image width to 80% of its container */
     max-width: 100%; /* Ensures the image does not exceed the size of the container */
     height: auto; /* Maintains the aspect ratio of the image */
     display: block; /* Makes the image a block element to apply width and centering */
