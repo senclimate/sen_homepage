@@ -1,25 +1,34 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-linktitle: "Climate Monitoring and Forecasts"
-summary: ""
-weight: 1
+title: "XRO"
+subtitle: "  "
+summary: "Climate forecasts"
+authors: []
+tags: []
+categories: []
+date: 2024-08-10
+lastmod: 2024-08-10
+featured: false
+draft: false
+share: false
+editable: false  # Allow visitors to edit the page? Supported by the Page, Post, and Docs content types.
 
-# Page metadata.
-title: Climate Monitoring and Forecasts
-date: "2019-04-09T00:00:00Z"
-lastmod: "2019-09-09T00:00:00Z"
-draft: true  # Is this a draft? true/false
-toc: false  # Show table of contents? true/false
-type: book  # Do not modify.
 
-# Add menu entry to sidebar.
-# - name: Declare this menu item as a parent with ID `name`.
-# - weight: Position of link in menu.
-menu:
-  forecast:
-    name: forecast
-    weight: 1
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
 ---
 
 This page provide 
@@ -110,17 +119,8 @@ Disclaimer:
   function setDefaultMonth() {
     const monthDropdown = document.getElementById('monthDropdown');
     const currentDate = new Date();
-    const currentDay = currentDate.getDate();
-    const currentMonth = currentDate.getMonth(); // JavaScript months are 0-indexed
-
-    if (currentDay <= 9) {
-      // If it's on or before the 15th, set the dropdown to the previous month
-      monthDropdown.selectedIndex = currentMonth === 0 ? 11 : currentMonth - 1;
-    } else {
-      // If it's after the 15th, set the dropdown to the current month
-      monthDropdown.selectedIndex = currentMonth;
-    }
-
+    const previousMonth = currentDate.getMonth(); // JavaScript months are 0-indexed
+    monthDropdown.selectedIndex = previousMonth === 0 ? 11 : previousMonth - 1;
     updateImage();
   }
 
@@ -156,30 +156,5 @@ Disclaimer:
     setDefaultMonth();
   };
 </script>
-
-
-https://iri.columbia.edu/our-expertise/climate/forecasts/enso/current/?enso_tab=enso-sst_table
-
-
-## [IRI ENSO](https://iri.columbia.edu/our-expertise/climate/forecasts/enso/current/)
-
-* **IRI most recent SST anomaly**
-{{< figure src="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/figure01.gif" title="" numbered="false" lightbox="true" >}}
-
-* **IRI most recent Nino 3.4 SST anomaly index plume**
-{{< figure src="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/figure06.gif" title="" numbered="false" lightbox="true" >}}
-https://iri.columbia.edu/our-expertise/climate/forecasts/enso/current/?enso_tab=enso-sst_table
-
-## [JMA ENSO Monitoring and Outlook](https://ds.data.jma.go.jp/tcc/tcc/products/elnino/elmonout.html)
-
-{{< figure src="https://ds.data.jma.go.jp/tcc/tcc/products/elnino/gif/c_sst.gif" title="Monthly mean SST and anomalies in the Pacific and Indian Oceans" numbered="false" lightbox="true" >}}
-
-{{< figure src="https://ds.data.jma.go.jp/tcc/tcc/products/elnino/gif/c_odas.gif" title="Depth-longitude cross sections of temperature and anomalies along the equator in the Indian and Pacific Oceans by the ocean data assimilation system" numbered="false" lightbox="true" >}}
-
-{{< figure src="https://ds.data.jma.go.jp/tcc/tcc/products/elnino/gif/c_eqssta.gif" title="Time-longitude cross section of SST anomalies along the equator in the Indian and Pacific Oceans" numbered="false" lightbox="true" >}}
-
-{{< figure src="https://ds.data.jma.go.jp/tcc/tcc/products/elnino/gif/c_eqohca.gif" title="Time-longitude cross section of ocean heat content (OHC; vertically averaged temperature in the top 300 m) anomalies along the equator in the Indian and Pacific Oceans by the ocean data assimilation system" numbered="false" lightbox="true" >}}
-
-{{< figure src="https://ds.data.jma.go.jp/tcc/tcc/products/elnino/gif/c_olr.gif" title="Monthly mean outgoing longwave radiation (OLR) and anomalies" numbered="false" lightbox="true" >}}
 
 
