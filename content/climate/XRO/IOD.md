@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-linktitle: "ENSO Forecasts"
+linktitle: "Indian Ocean Dipole (IOD) Forecasts"
 summary: "Climate hindicasts and forecasts using the Extended nonlinear recharge oscillator (XRO) model "
 weight: 1
 
@@ -9,7 +9,7 @@ weight: 1
 title: XRO Forecasts
 date: "2024-08-09T00:00:00Z"
 lastmod: "2024-08-09T00:00:00Z"
-draft: false  # Is this a draft? true/false
+draft: true  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
 
@@ -19,7 +19,7 @@ type: book  # Do not modify.
 
 ---
 
-### ENSO forecasts
+### IOD forecasts
 
 <style>
   #image-selector {
@@ -85,7 +85,7 @@ type: book  # Do not modify.
 
 
 <div id="image-selector">
-  <label for="yearDropdown">Select the ENSO Forecast:</label>
+  <label for="yearDropdown">Select the IOD Forecast:</label>
   <select id="yearDropdown" onchange="updateImage()"></select>
   <select id="monthDropdown" onchange="updateImage()">
     <option value="01">Jan</option>
