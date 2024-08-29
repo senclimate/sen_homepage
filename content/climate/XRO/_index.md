@@ -1,12 +1,12 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-linktitle: "ENSO Forecasts"
+linktitle: "XRO ENSO Forecasts"
 summary: "Climate hindicasts and forecasts using the Extended nonlinear recharge oscillator (XRO) model "
 weight: 1
 
 # Page metadata.
-title: XRO Forecasts
+title: XRO ENSO Forecasts
 date: "2024-08-09T00:00:00Z"
 lastmod: "2024-08-09T00:00:00Z"
 draft: false  # Is this a draft? true/false
@@ -197,6 +197,7 @@ type: book  # Do not modify.
   };
 </script>
 
+
 ### XRO model 
 
 The XRO is an e**X**tended nonlinear **R**echarge **O**scillator model for El Niño-Southern Oscillation (ENSO) and other modes of variability in the global oceans ([Zhao et al. 2024](#ref-zhao-2024)). It builds on the legacies of the Hasselmann stochastic climate model capturing upper ocean memory in sea surface temperature (SST) variability ([Hasselmann, 1976](#ref-hasselmann-1976)), and the recharge oscillator model for the oscillatory core dynamics of ENSO ([Jin, 1997](#ref-jin-1997)). It constitutes a parsimonious representation of the climate system in a reduced variable and parameter space that still captures the essential dynamics of interconnected global climate variability. For the detailed formulation of XRO model, please refer to our paper ([Zhao et al., 2024](#ref-zhao-2024)).
@@ -208,6 +209,7 @@ Here we make a 18-month forecast with the trained XRO model using the climate mo
 - Warm water volume index of equatorial Pacific heat content provided by NOAA, PMEL at https://www.pmel.noaa.gov/elnino/upper-ocean-heat-content-and-enso
 
 We conduct 100-member stochastic forecasts with the same initial conditions for each month but different stochastic forcings, See Supplementary Fig. 16 in [Zhao et al. (2024)](#ref-zhao-2024) for how we make 100-member stochastic forecasts in details.
+
 
 ### References
 
