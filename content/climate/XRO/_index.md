@@ -153,7 +153,7 @@ type: book  # Do not modify.
     const currentDay = currentDate.getDate();
     const currentMonth = currentDate.getMonth(); // JavaScript months are 0-indexed
 
-    if (currentDay <= 9) {
+    if (currentDay <= 5) {
       // If it's on or before the 15th, set the dropdown to the previous month
       monthDropdown.selectedIndex = currentMonth === 0 ? 11 : currentMonth - 1;
     } else {
