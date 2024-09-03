@@ -208,7 +208,7 @@ Here we make a 18-month forecast with the trained XRO model using the climate mo
 - SST anomaly indices derived from the monthly OISST v2 SST data provided by NOAA, PSL at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html
 - Warm water volume index of equatorial Pacific heat content provided by NOAA, PMEL at https://www.pmel.noaa.gov/elnino/upper-ocean-heat-content-and-enso
 
-We conduct 100-member stochastic forecasts with the same initial conditions for each month but different stochastic forcings, See Supplementary Fig. 16 in [Zhao et al. (2024)](#ref-zhao-2024) for how we make 100-member stochastic forecasts in details.
+We conduct 1000-member stochastic forecasts with the same initial conditions for each month but different stochastic forcings, See Supplementary Fig. 16 in [Zhao et al. (2024)](#ref-zhao-2024) for how we make 1000-member stochastic forecasts in details.
 
 
 ### References
