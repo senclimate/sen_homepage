@@ -114,7 +114,7 @@ type: book  # Do not modify.
   function populateYears() {
     const yearDropdown = document.getElementById('yearDropdown');
     const currentYear = new Date().getFullYear();
-    for (let year = 2023; year <= 2024; year++) {
+    for (let year = 2023; year <= 2030; year++) {
       let option = document.createElement('option');
       option.value = year;
       option.text = year;
