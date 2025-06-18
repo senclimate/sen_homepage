@@ -26,50 +26,6 @@
       async="async">
       </script>
 
-      <!-- Baidu Analysitcs -->
-      <!-- <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?4235da10779dab6a14dca9029ead7ee5";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-      </script> -->
-
-    <!-- Google tag (gtag.js) -->
-    <script>
-      (function() {
-        // Create an image element
-        var img = new Image();
-        // Set up the event handler for when the image fails to load
-        img.onerror = function() {
-          console.log('Google services are blocked in this region.');
-          // If the image fails to load, do not load Google Analytics
-          return;
-        };
-        // If the image loads successfully, load Google Analytics
-        img.onload = function() {
-          // Load Google Analytics script
-          var gtagScript = document.createElement('script');
-          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E353SPBCJ1';
-          gtagScript.async = true;
-          document.head.appendChild(gtagScript);
-    
-          // Initialize Google Analytics
-          gtagScript.onload = function() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-E353SPBCJ1');
-          };
-        };
-        
-        // Set the image source to a Google domain
-        img.src = 'https://www.google.com/favicon.ico';
-      })();
-    </script>
-
      </span>
 
     {{ if ne .Type "docs" }}
