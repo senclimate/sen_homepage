@@ -1,12 +1,12 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-linktitle: "XRO ENSO Forecasts"
+linktitle: "ENSO Forecast"
 summary: "Climate hindicasts and forecasts using the Extended nonlinear recharge oscillator (XRO) model "
 weight: 1
 
 # Page metadata.
-title: XRO ENSO Forecasts
+title: Operational XRO Climate Forecasts
 date: "2024-08-09T00:00:00Z"
 lastmod: "2024-08-09T00:00:00Z"
 draft: false  # Is this a draft? true/false
@@ -19,7 +19,7 @@ type: book  # Do not modify.
 
 ---
 
-### ENSO forecasts
+### 📝 XRO Niño3.4 SST anomaly monthly forecast
 
 <style>
   #image-selector {
@@ -202,14 +202,33 @@ type: book  # Do not modify.
 
 The XRO is an e**X**tended nonlinear **R**echarge **O**scillator model for El Niño-Southern Oscillation (ENSO) and other modes of variability in the global oceans ([Zhao et al. 2024](#ref-zhao-2024)). It builds on the legacies of the Hasselmann stochastic climate model capturing upper ocean memory in sea surface temperature (SST) variability ([Hasselmann, 1976](#ref-hasselmann-1976)), and the recharge oscillator model for the oscillatory core dynamics of ENSO ([Jin, 1997](#ref-jin-1997)). It constitutes a parsimonious representation of the climate system in a reduced variable and parameter space that still captures the essential dynamics of interconnected global climate variability. For the detailed formulation of XRO model, please refer to our paper ([Zhao et al., 2024](#ref-zhao-2024)).
 
+
+### XRO ENSO forecast skill
+![Forecast correlation skill (ACC) for Niño3.4 and WWV across model combinations derived from different SST and WWV data](XRO_out_of_sample_skill_2012-2024.png)
+**Figure 1**: Out-of-sample forecast accuracy from XRO trained on 1982–2011 data and verified over 2012–2024. Lines show correlation skill as a function of lead month for different combinations of SST and WWV datasets (e.g., `OISSTv2_godas`, `ERA5_oras5`, etc.).
+
+![Forecast correlation skill (ACC) for Niño3.4 and WWV across model combinations derived from different SST and WWV data](XRO_in_sample_skill_1982-2024.png)
+**Figure 2**: In-sample forecast accuracy from XRO trained on 1982–2024.
+
 ### Data source
 
-Here we make a 18-month forecast with the trained XRO model using the climate mode indices for 1982-2022 and initial conditions beginning in January 2023. The XRO state vectors of ENSO and other climate modes 
-- SST anomaly indices derived from the monthly OISST v2 SST data provided by NOAA, PSL at https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html
-- Warm water volume index of equatorial Pacific heat content provided by NOAA, PMEL at https://www.pmel.noaa.gov/elnino/upper-ocean-heat-content-and-enso
+Operationally, we produce 18-month forecasts using the trained XRO model based on climate mode indices from 1982–2022, with initial conditions starting in January 2023. The XRO state vectors include ENSO and other climate modes, derived from:
+
+- **Monthly SST anomaly indices**, based on:
+  - [OISST v2.1](https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html) provided by NOAA/PSL
+  - [ERA5](https://doi.org/10.24381/cds.f17050d7) provided by the Copernicus Climate Change Service (C3S)
+  - [ORAS5](https://doi.org/10.24381/cds.67e8eeb7) SST provided by C3S
+  - [GODAS](https://psl.noaa.gov/data/gridded/data.godas.html) SST provided by NOAA/PSL
+
+- **Monthly Warm Water Volume (WWV) index** of equatorial Pacific upper-ocean heat content, based on:
+  - [TAO](https://www.pmel.noaa.gov/elnino/upper-ocean-heat-content-and-enso) data provided by NOAA/PMEL
+  - [IAPv4 subsurface temperature](http://www.ocean.iap.ac.cn/ftp/cheng/IAPv4.2_IAP_Temperature_gridded_1month_netcdf) provided by Lijing Cheng at IAP, Chinese Academy of Sciences
+  - [ORAS5](https://doi.org/10.24381/cds.67e8eeb7) D20 provided by C3S 
+  - [GODAS](https://psl.noaa.gov/data/gridded/data.godas.html) provided by NOAA/PSL
 
 We conduct 1000-member stochastic forecasts with the same initial conditions for each month but different stochastic forcings, See Supplementary Fig. 16 in [Zhao et al. (2024)](#ref-zhao-2024) for how we make 1000-member stochastic forecasts in details.
 
+Due to delays in TAO updates, the OISSTv2_IAPv4 version has been adopted for the official release starting June 2025.
 
 ### References
 
