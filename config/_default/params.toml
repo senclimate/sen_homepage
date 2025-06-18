@@ -91,7 +91,7 @@ show_related = {docs = false, page = false, post = true, project = true, publica
 
 # Enter contact details (optional). To hide a field, clear it to "".
 email = "zhaos@hawaii.edu"
-phone = "+1 (808) 956-7110"
+# phone = "+1 (808) 956-7110"
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
@@ -159,7 +159,7 @@ gravatar = false
 ## menu_align_right = true
 
 # Main menu alignment (l = left, c = center, r = right) and logo options.
-main_menu = {enable = true, align = "r", show_logo = true, highlight_active_link = true, show_language = true, show_day_night = true, show_search = true}
+main_menu = {enable = true, align = "c", show_logo = true, highlight_active_link = true, show_language = true, show_day_night = true, show_search = true}
 
 # Show estimated reading time for posts? (true/false)
 reading_time = false
@@ -169,11 +169,11 @@ section_pager = false
 docs_section_pager = true  # Display pager in Docs layout (e.g. tutorials)?
 
 # Enable in-built social sharing buttons? (true/false)
-sharing = true
+sharing = false
 
 # Show a copyright license from creativecommons.org in the site footer?
 # Page specific copyright licenses are also possible by adding this option to a page's front matter.
-copyright_license = {enable = false, allow_derivatives = false, share_alike = true, allow_commercial = false, notice = "This work is licensed under {license}"}
+copyright_license = {enable = true, allow_derivatives = true, share_alike = true, allow_commercial = true, notice = "This work is licensed under {license}"}
 
 # Link authors to their profile page? (true/false)
 link_authors = true
@@ -216,7 +216,7 @@ plugins_js  = []
   #   0: Disabled
   #   1: Disqus (https://disqus.com)
   #   2: Commento (https://commento.io)
-  engine = 0
+  engine = 2
 
   # Which page types are commentable?
   commentable = {page = false, post = true, docs = false, project = false, publication = false, talk = false}

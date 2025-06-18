@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-module load hugo
+#module load hugo
 hugo server --panicOnWarning --disableFastRender --bind 128.171.151.93 --baseURL http://128.171.151.93/ #--i18n-warnings
 
 

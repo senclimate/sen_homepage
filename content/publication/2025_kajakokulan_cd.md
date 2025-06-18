@@ -2,7 +2,7 @@
 title: "Asymmetric response of Sri Lanka Northeast Monsoon rainfall to El Niño/La Niña"
 date: 2024-12-01
 publishDate: 2024-12-11T01:48:20.695096Z
-authors: ["Pathmarasa Kajakokulan", "Agus Santoso", "**Sen Zhao**"]
+authors: ["Pathmarasa Kajakokulan", "Agus Santoso", "Sen Zhao"]
 publication_types: ["2"]
 abstract: ""
 featured: false

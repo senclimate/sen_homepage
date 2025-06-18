@@ -2,44 +2,90 @@
 
 {{- define "main" -}}
 
-
 {{/* If an account has not been created for this user, just display their name as the title. */}}
 {{ if not .File }}
-<div class="universal-wrapper pt-3">
-  <h1>{{ .Title | markdownify }}</h1> 
+<div class="universal-wrapper" style="margin: 0; padding: 0 1.5rem;">
+  <h1 style="margin: 0; padding: 0; line-height: 1.2;">{{ .Title | markdownify }}</h1> 
 </div>
 {{ end }}
 
-<section id="profile-page" class="pt-5">
+
+<section id="profile-page">
   <div class="container">
     {{/* Show the About widget if an account exists for this user. */}}
-      
-    
     {{ if .File }}
       {{ $widget := "widgets/about.html" }}
-      {{ $username := (path.Base (path.Split .Path).Dir) }}{{/* Alternatively, use `index .Params.authors 0` */}}
+      {{ $username := path.Base (path.Split .File.Path).Dir }}
       {{ $params := dict "root" $ "page" . "author" $username }}
       {{ partial $widget $params }}
-    {{end}}
+    {{ end }}
 
     {{ $query := where .Pages ".IsNode" false }}
     {{ $count := len $query }}
     {{ if $count }}
-    <div class="article-widget">
-      <div class="hr-light"></div>
-      <h3>{{ i18n "user_profile_latest" | default "Latest" }}</h3>
-      <ul>
-        <ol type="1" reversed="reversed">
-        {{ range $query }}
-        <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <div class="publications-list">
+      <h2>Latest</h2>
+      <ol reversed>
+        {{ range $query.ByDate.Reverse }}
+        <li value="{{ $count }}">
+          <div class="publication-item">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="publication-date">{{ .Date.Format "January 2006" }}</span>
+          </div>
+          {{ $count = sub $count 1 }}
         </li>
         {{ end }}
-        </ol>
-      </ul>
+      </ol>
     </div>
     {{ end }}
   </div>
 </section>
+
+<style>
+  /* Clean, compact styling matching the image */
+  #profile-page {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .publications-list {
+    margin-top: 1.5rem;
+  }
+  
+  .publications-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .publications-list ol {
+    padding-left: 1.5rem;
+    margin: 0;
+    counter-reset: item {{ len $query }};
+  }
+  
+  .publication-item {
+    margin-bottom: 0.75rem;
+  }
+  
+  .publication-item a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .publication-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .publication-date {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+</style>
 
 {{- end -}}

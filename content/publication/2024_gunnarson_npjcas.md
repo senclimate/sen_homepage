@@ -2,7 +2,7 @@
 title: "Drivers of future extratropical sea surface temperature variability changes in the North Pacific"
 date: 2024-07-11
 publishDate: 2024-07-11T01:48:20.695096Z
-authors: ["Jacob L. Gunnarson", "Malte F. Stuecker", "**Sen Zhao**"]
+authors: ["Jacob L. Gunnarson", "Malte F. Stuecker", "Sen Zhao"]
 publication_types: ["2"]
 abstract: ""
 featured: false

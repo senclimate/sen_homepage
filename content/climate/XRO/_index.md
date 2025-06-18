@@ -3,7 +3,7 @@
 
 linktitle: "ENSO Forecast"
 summary: "Climate hindicasts and forecasts using the Extended nonlinear recharge oscillator (XRO) model "
-weight: 1
+weight: 2
 
 # Page metadata.
 title: Operational XRO Climate Forecasts
@@ -113,89 +113,86 @@ type: book  # Do not modify.
 <script>
   function populateYears() {
     const yearDropdown = document.getElementById('yearDropdown');
+    const startYear = 2023;
+    const endYear = 2028;
     const currentYear = new Date().getFullYear();
-    for (let year = 2023; year <= 2030; year++) {
-      let option = document.createElement('option');
+
+    for (let year = startYear; year <= endYear; year++) {
+      const option = document.createElement('option');
       option.value = year;
       option.text = year;
-      option.selected = (year === currentYear);
       yearDropdown.appendChild(option);
     }
+
+    yearDropdown.value = Math.min(currentYear, endYear); // default to current or max available
   }
 
   function updateImage() {
-    var yearDropdown = document.getElementById('yearDropdown');
-    var monthDropdown = document.getElementById('monthDropdown');
-    var selectedYear = yearDropdown.value;
-    var selectedMonth = monthDropdown.value;
-    var imagePath = '/XRO_plume/' + selectedYear + '-' + selectedMonth + '.png';
+    const year = document.getElementById('yearDropdown').value;
+    const month = document.getElementById('monthDropdown').value;
+    const imagePath = `/XRO_plume/${year}-${month}_Nino34.png`;
 
-    var img = document.getElementById('selectedImage');
-    var status = document.getElementById('imageStatus');
+    const img = document.getElementById('selectedImage');
+    const status = document.getElementById('imageStatus');
 
-    var testImg = new Image();
-    testImg.onload = function() {
+    const testImg = new Image();
+    testImg.onload = function () {
       img.src = imagePath;
       img.style.display = 'block';
       status.style.display = 'none';
     };
-    testImg.onerror = function() {
+    testImg.onerror = function () {
       img.style.display = 'none';
       status.style.display = 'block';
     };
-
     testImg.src = imagePath;
   }
 
   function setDefaultMonth() {
     const monthDropdown = document.getElementById('monthDropdown');
-    const currentDate = new Date();
-    const currentDay = currentDate.getDate();
-    const currentMonth = currentDate.getMonth(); // JavaScript months are 0-indexed
+    const today = new Date();
+    const day = today.getDate();
+    const monthIndex = today.getMonth(); // 0-based
 
-    if (currentDay <= 15) {
-      // If it's on or before the 15th, set the dropdown to the previous month
-      monthDropdown.selectedIndex = currentMonth === 0 ? 11 : currentMonth - 1;
-    } else {
-      // If it's after the 15th, set the dropdown to the current month
-      monthDropdown.selectedIndex = currentMonth;
-    }
-
+    // Default to previous month if before 15th
+    monthDropdown.selectedIndex = (day <= 15) ? (monthIndex + 11) % 12 : monthIndex;
     updateImage();
   }
 
   function changeMonth(delta) {
     const monthDropdown = document.getElementById('monthDropdown');
     const yearDropdown = document.getElementById('yearDropdown');
-    let monthIndex = monthDropdown.selectedIndex + delta;
 
-    if (monthIndex < 0) { // If before January, wrap around to December
-      monthIndex = 11;
-      changeYear(-1);
-    } else if (monthIndex > 11) { // If after December, wrap around to January
-      monthIndex = 0;
-      changeYear(1);
+    let currentMonthIndex = monthDropdown.selectedIndex;
+    let currentYearIndex = yearDropdown.selectedIndex;
+
+    const totalMonths = 12;
+    const newMonthIndex = currentMonthIndex + delta;
+
+    // Handle month rollover
+    if (newMonthIndex < 0) {
+      if (currentYearIndex > 0) {
+        yearDropdown.selectedIndex = currentYearIndex - 1;
+        monthDropdown.selectedIndex = totalMonths - 1;
+      }
+    } else if (newMonthIndex >= totalMonths) {
+      if (currentYearIndex < yearDropdown.options.length - 1) {
+        yearDropdown.selectedIndex = currentYearIndex + 1;
+        monthDropdown.selectedIndex = 0;
+      }
+    } else {
+      monthDropdown.selectedIndex = newMonthIndex;
     }
 
-    monthDropdown.selectedIndex = monthIndex;
     updateImage();
   }
 
-  function changeYear(delta) {
-    const yearDropdown = document.getElementById('yearDropdown');
-    let yearIndex = yearDropdown.selectedIndex + delta;
-
-    if (yearIndex >= 0 && yearIndex < yearDropdown.options.length) {
-      yearDropdown.selectedIndex = yearIndex;
-      updateImage();
-    }
-  }
-
-  window.onload = function() {
+  window.onload = function () {
     populateYears();
     setDefaultMonth();
   };
 </script>
+
 
 
 ### XRO model 
@@ -204,10 +201,10 @@ The XRO is an e**X**tended nonlinear **R**echarge **O**scillator model for El Ni
 
 
 ### XRO ENSO forecast skill
-![Forecast correlation skill (ACC) for Niño3.4 and WWV across model combinations derived from different SST and WWV data](XRO_out_of_sample_skill_2012-2024.png)
+![Forecast correlation skill (ACC) for Niño3.4 across model combinations derived from different SST and WWV data](XRO_Nino34_out_of_sample_skill_2012-2024.png)
 **Figure 1**: Out-of-sample forecast accuracy from XRO trained on 1982–2011 data and verified over 2012–2024. Lines show correlation skill as a function of lead month for different combinations of SST and WWV datasets (e.g., `OISSTv2_godas`, `ERA5_oras5`, etc.).
 
-![Forecast correlation skill (ACC) for Niño3.4 and WWV across model combinations derived from different SST and WWV data](XRO_in_sample_skill_1982-2024.png)
+![Forecast correlation skill (ACC) for Niño3.4 across model combinations derived from different SST and WWV data](XRO_Nino34_in_sample_skill_1982-2024.png)
 **Figure 2**: In-sample forecast accuracy from XRO trained on 1982–2024.
 
 ### Data source

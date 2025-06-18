@@ -2,7 +2,7 @@
 title: "Contrast and Predictability of Island-scale El Niño Influences on Hawaii Wave Climate"
 date: 2025-03-26
 publishDate: 2025-03-26T01:48:20.695096Z
-authors: ["**Sen Zhao**", "Ning Li", "Fei-Fei Jin", "Kwok Fai Cheung", "Zhaoqing Yang"]
+authors: ["Sen Zhao", "Ning Li", "Fei-Fei Jin", "Kwok Fai Cheung", "Zhaoqing Yang"]
 publication_types: ["2"]
 first_author: true
 abstract: ""

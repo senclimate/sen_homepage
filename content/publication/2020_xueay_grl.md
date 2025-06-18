@@ -2,7 +2,7 @@
 title: "Delineating the Seasonally Modulated Nonlinear Feedback onto ENSO from Tropical Instability Waves"
 date: 2020-02-11
 publishDate: 2020-02-11T01:48:20.695096Z
-authors: ["Aoyun Xue", "Fei‐Fei Jin", "Wenjun Zhang", "Julien Boucharel", "**Sen Zhao**", "Xinyi Yuan"]
+authors: ["Aoyun Xue", "Fei‐Fei Jin", "Wenjun Zhang", "Julien Boucharel", "Sen Zhao", "Xinyi Yuan"]
 publication_types: ["2"]
 abstract: ""
 featured: false

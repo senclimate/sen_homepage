@@ -15,10 +15,6 @@ type: book  # Do not modify.
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
-menu:
-  sdm:
-    name: The SDM for the IOD
-    weight: 1
 ---
 
 ## Overview

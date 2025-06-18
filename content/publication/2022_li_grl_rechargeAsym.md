@@ -1,6 +1,6 @@
 ---
 title: "On the asymmetry of the tropical Pacific thermocline fluctuation associated with ENSO recharge and discharge"
-authors: ["Xiaofan Li", "Zeng‐Zhen Hu", "**Sen Zhao**", "Ruiqiang Ding", "Banglin Zhang"]
+authors: ["Xiaofan Li", "Zeng‐Zhen Hu", "Sen Zhao", "Ruiqiang Ding", "Banglin Zhang"]
 date: 2022-05-10
 doi: 10.1029/2022GL099242
 draft : "false"

@@ -2,7 +2,7 @@
 title: "Influence of the Summer NAO on the Spring-NAO-Based Predictability of the East Asian Summer Monsoon"
 date: 2016-01-01
 publishDate: 2019-09-18T01:50:18.504278Z
-authors: ["Fei Zheng", "Jianping Li", "Yanjie Li", "**Sen Zhao**", "Difei Deng"]
+authors: ["Fei Zheng", "Jianping Li", "Yanjie Li", "Sen Zhao", "Difei Deng"]
 publication_types: ["2"]
 abstract: ""
 featured: false

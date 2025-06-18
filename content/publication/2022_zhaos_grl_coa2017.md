@@ -1,6 +1,6 @@
 ---
 title: "Competing Effects of Eastern and Central‐Western Pacific Winds in the Evolution of the 2017 Extreme Coastal El Niño"
-authors: ["**Sen Zhao**", "Christina Karamperidou"]
+authors: ["Sen Zhao", "Christina Karamperidou"]
 date: 2022-08-10
 doi: 10.1029/2022GL098859
 draft : "false"

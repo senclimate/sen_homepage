@@ -1,6 +1,6 @@
 ---
 title: "On the Breakdown of ENSO’s Relationship with Thermocline Depth in the Central‐Equatorial Pacific"
-authors: ["**Sen Zhao**", "Fei-Fei Jin", "Xiaoyu Long", "Mark A. Cane"]
+authors: ["Sen Zhao", "Fei-Fei Jin", "Xiaoyu Long", "Mark A. Cane"]
 date: 2021-04-06
 doi: "10.1029/2020GL092335"
 first_author: true

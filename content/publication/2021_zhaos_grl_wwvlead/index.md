@@ -1,6 +1,6 @@
 ---
 title: "Understanding Lead Times of Warm Water Volumes to ENSO Sea Surface Temperature Anomalies"
-authors: ["**Sen Zhao**", "Fei-Fei Jin", "Malte F. Stuecker"]
+authors: ["Sen Zhao", "Fei-Fei Jin", "Malte F. Stuecker"]
 date: 2021-09-17
 doi: "10.1029/2021GL094366"
 first_author: true

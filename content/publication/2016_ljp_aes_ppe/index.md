@@ -2,7 +2,7 @@
 title: "On the role of perturbation potential energy in variability of the East Asian summer monsoon: Current status and prospects (in Chinese)"
 date: 2016-01-01
 publishDate: 2019-09-18T01:50:18.503716Z
-authors: ["Jianping Li", "**Sen Zhao**", "Yanjie Li", "Lei Wang", "Cheng Sun"]
+authors: ["Jianping Li", "Sen Zhao", "Yanjie Li", "Lei Wang", "Cheng Sun"]
 publication_types: ["2"]
 abstract: ""
 featured: false

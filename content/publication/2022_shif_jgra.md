@@ -3,7 +3,7 @@ title: "Roman Warm Period and Late Antique Little Ice Age in an Earth system mod
 large ensemble"
 date: 2022-08-09
 publishDate: 2022-08-09T01:48:20.695096Z
-authors: ["Feng Shi", "Cheng Sun", "Antoine Guion", "Antoine Guion", "Qiuzhen Yin", "**Sen Zhao**", "Ting Liu", "Zhengtang Guo"]
+authors: ["Feng Shi", "Cheng Sun", "Antoine Guion", "Antoine Guion", "Qiuzhen Yin", "Sen Zhao", "Ting Liu", "Zhengtang Guo"]
 publication_types: ["2"]
 abstract: ""
 featured: false

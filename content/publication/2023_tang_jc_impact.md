@@ -2,7 +2,7 @@
 title: "Synergistic effect of El Niño and negative phase of North Atlantic Oscillation on winter precipitation in the southeastern United States"
 date: 2023-03-15
 publishDate: 2023-03-15T01:48:20.695096Z
-authors: ["Xinxin Tang", "Jianping Li", "Yazhou Zhang", "Yanjie Li", "**Sen Zhao**"]
+authors: ["Xinxin Tang", "Jianping Li", "Yazhou Zhang", "Yanjie Li", "Sen Zhao"]
 publication_types: ["2"]
 abstract: ""
 featured: false

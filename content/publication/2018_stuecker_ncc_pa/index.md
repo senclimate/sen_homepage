@@ -2,7 +2,7 @@
 title: "Polar Amplification Dominated by Local Forcing and Feedbacks"
 date: 2018-01-01
 publishDate: 2019-09-18T01:50:18.490374Z
-authors: ["Malte F. Stuecker", "Cecilia M. Bitz", "Kyle C. Armour", "Cristian Proistosescu", "Sarah M. Kang", "Shang-Ping Xie", "Doyeon Kim", "Shayne McGregor", "Wenjun Zhang", "**Sen Zhao**", "Wenju Cai", "Yue Dong", "Fei-Fei Jin"]
+authors: ["Malte F. Stuecker", "Cecilia M. Bitz", "Kyle C. Armour", "Cristian Proistosescu", "Sarah M. Kang", "Shang-Ping Xie", "Doyeon Kim", "Shayne McGregor", "Wenjun Zhang", "Sen Zhao", "Wenju Cai", "Yue Dong", "Fei-Fei Jin"]
 publication_types: ["2"]
 abstract: ""
 featured: false

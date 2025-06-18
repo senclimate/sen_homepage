@@ -2,7 +2,7 @@
 title: "Relationship between the Hadley circulation and different tropical meridional SST structures during boreal summer"
 date: 2018-01-01
 publishDate: 2019-09-18T01:50:18.494571Z
-authors: ["Juan Feng", "Jianping Li", "Feifei Jin", "**Sen Zhao**", "Jianlei Zhu"]
+authors: ["Juan Feng", "Jianping Li", "Feifei Jin", "Sen Zhao", "Jianlei Zhu"]
 publication_types: ["2"]
 abstract: ""
 featured: false
