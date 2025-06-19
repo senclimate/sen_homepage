@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+rm -rf public resources
 find . -name '.DS_Store' -type f -delete
 git add .
 if [ -z "$1" ]; then

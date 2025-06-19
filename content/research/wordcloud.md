@@ -48,9 +48,8 @@ design:
   columns: '2'  # 1 or 2 column layout
   # view: compact  # For new versions since v5.5+, write the view name
   view: 1  # For older versions prior to v5.5, use the numeric IDs above
-  flip_alt_rows: false # Flip alternate rows when in Showcase view?
+  flip_alt_rows: true # Flip alternate rows when in Showcase view?
 
 ---
 
-![Google Scholar Word Cloud](googlescholar_wordcloud.png)
-Word cloud from my Google Scholar using [Shiny Server](https://shiny.research.sfu.ca/u/rdmorin/scholargoggler10/)
+{{<figure src="/pubs/googlescholar_wordcloud.png" title="Word cloud from my Google Scholar using [Shiny Scholar Goggler](https://shiny.research.sfu.ca/u/rdmorin/scholargoggler10/)" placement="center" numbered="false" lightbox="true" width="100%" >}}
