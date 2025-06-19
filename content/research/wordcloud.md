@@ -52,5 +52,5 @@ design:
 
 ---
 
-![Google Scholar Word Cloud](/images/googlescholar_wordcloud.png)
+![Google Scholar Word Cloud](googlescholar_wordcloud.png)
 Word cloud from my Google Scholar using [Shiny Server](https://shiny.research.sfu.ca/u/rdmorin/scholargoggler10/)
