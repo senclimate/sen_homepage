@@ -1,6 +1,6 @@
 ---
 title: "Research Word Cloud"
-subtitle: ""
+subtitle: "Key Questions"
 summary: ""
 authors: ["sen-zhao"]
 
@@ -52,4 +52,21 @@ design:
 
 ---
 
-{{<figure src="/pubs/googlescholar_wordcloud.png" title="Word cloud from my Google Scholar using [Shiny Scholar Goggler](https://shiny.research.sfu.ca/u/rdmorin/scholargoggler10/)" placement="center" numbered="false" lightbox="true" width="100%" >}}
+{{<figure src="/pubs/googlescholar_wordcloud.png" title="Word cloud from my Google Scholar using [Shiny Scholar Goggler](https://shiny.research.sfu.ca/u/rdmorin/scholargoggler10/)" placement="center" numbered="false" lightbox="false" width="100%" >}}
+
+## Key research questions  
+
+### 1. **ENSO Complexity and Predictability**  
+**What governs the dynamics, complexity, and predictability of El Niño–Southern Oscillation (ENSO)?**  
+How do observations and climate models compare in capturing ENSO's evolution, impacts, and seasonal predictability? What new insights can improve ENSO forecasting?  
+
+### 2. **Tropical Interbasin Interactions**  
+**How do the Pacific, Indian, and Atlantic Oceans interact to shape tropical and global climate variability?**  
+Can we quantify these interbasin teleconnections in observations and models? How do they influence regional and global climate patterns?  
+
+### 3. **Regional Climate Extremes**  
+**What drives the occurrence and intensity of heatwaves, droughts, and floods, marine heatwaves and ocean waves extremes?** 
+How are these extremes and their compounding effects linked to global climate modes, and how might their frequency and intensity shift in a warming world?
+
+
+---
