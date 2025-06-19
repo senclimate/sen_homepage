@@ -52,4 +52,4 @@ design:
 
 ---
 
-{{<figure src="/media/googlescholar_wordcloud.png" title="Word cloud from my Google Scholar using [Shiny Server](https://shiny.research.sfu.ca/u/rdmorin/scholargoggler10/)" placement="center" numbered="false" lightbox="true" width="100%" >}}
+{{<figure src="/images/googlescholar_wordcloud.png" title="Word cloud from my Google Scholar using [Shiny Server](https://shiny.research.sfu.ca/u/rdmorin/scholargoggler10/)" placement="center" numbered="false" lightbox="true" width="100%" >}}
