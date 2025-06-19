@@ -1,4 +1,5 @@
 ---
+
 title: "Links"
 subtitle: ""
 summary: "Useful links for climate data, analysis tools, and modeling resources."
@@ -11,6 +12,7 @@ featured: false
 draft: false
 share: false
 editable: true
+type: "widget_page"
 
 image:
   caption: ""
