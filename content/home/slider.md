@@ -14,7 +14,7 @@ height = "calc(40vh - 70px)"  # Slide height.
   title = "Operational XRO climate forecasts online"
   content = """
 <p><strong><span style='font-size: 16px; color: yellow;'><em>
-Real-time forecasts of ENSO and other climate modes using the eXtended nonlinear Recharge Oscillator (XRO)
+Real-time forecasts of ENSO and IOD using the eXtended nonlinear Recharge Oscillator (XRO)
 </em></span></strong></p>
 <a href='climate/xro/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #e0ffff; border-color: #40e0d0;'><i class='fas fa-signal'></i> Forecast Dashboard</a>
 <a href='https://github.com/senclimate/XRO' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #afeeee; border-color: #00ced1;'><i class='fab fa-github'></i> Code</a>
@@ -23,7 +23,7 @@ Real-time forecasts of ENSO and other climate modes using the eXtended nonlinear
   align = "center"
   overlay_color = "#1453b4"
   overlay_filter = 0.95
-  overlay_img = "BigIsland_2.jpg"
+  overlay_img = "BigIsland_1.jpg"
 
 
 # Slide 1: Nature publication announcement
@@ -47,18 +47,18 @@ Real-time forecasts of ENSO and other climate modes using the eXtended nonlinear
 
 # Slide 2: NSF funding announcement
 [[item]]
-  title = "Our proposal secures funding from the U.S. NSF"
+  title = "Our coastal El Niño proposal secures funding from the U.S. NSF"
   content = """
 <p><strong><span style='font-size: 16px; color: yellow;'><em>
 Dynamics and predictability of coastal El Niño events, and implications for ENSO diversity
 </em></span></strong></p>
-<a href='https://www.christinakaramperidou.com/' class='btn btn-light'>Lead PI C. Karamperidou</a>
-<a href='cv_sen.pdf' class='btn btn-light'>co-PI S. Zhao</a>
+<a href='https://www.christinakaramperidou.com/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #add8e6; border-color: #87ceeb;'>Lead PI C. Karamperidou</a>
+<a href='cv_sen.pdf' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #add8e6; border-color: #87ceeb;'>co-PI S. Zhao</a>
 """
   align = "center"
   overlay_color = "#1453b4"
   overlay_filter = 0.95
-  overlay_img = "BigIsland_2.jpg"
+  overlay_img = "BigIsland_3.jpg"
 
 # Optional third slide: ClimateState (currently commented out)
 # [[item]]

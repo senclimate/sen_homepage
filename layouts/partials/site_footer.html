@@ -1,100 +1,40 @@
 <footer class="site-footer">
-  <!-- Gray horizontal line at the TOP of footer -->
-  <div class="footer-top-line"></div>
-  
-  <div class="footer-container">
-    <!-- Left-aligned map with fixed size -->
-    <div class="footer-map">
-      <script type="text/javascript" id="clstr_globe" 
-        src="//clustrmaps.com/globe.js?d=C1DlDByu-2fApAO7ih9XyNNB7syFspDFBCnj--s0GXY&w=80&h=80">
-      </script>
-    </div>
-
-    <!-- Center content -->
-    <div class="footer-center">
-      {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
-      <p class="powered-by">
-        {{ with site.GetPage "privacy.md" }}
-          {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
-        {{ end }}
-        {{ with site.GetPage "terms.md" }}
-          {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
-          {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
-        {{ end }}    
-      </p>
-      {{ end }}
-
-      <p class="powered-by">
-        {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; Sen Zhao {{ end }}
-      </p>
-
-      <p class="powered-by">
-        Powered with 
-        <a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy</a>
-      </p>
-    </div>
-
-    <!-- Right-aligned back-to-top -->
-    {{ if ne .Type "docs" }}
-    <div class="back-to-top">
-      <a href="#" id="back_to_top" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
-      </a>
-    </div>
+  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
+  <p class="powered-by">
+    {{ with site.GetPage "privacy.md" }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
     {{ end }}
-  </div>
-</footer>
+    {{ with site.GetPage "terms.md" }}
+      {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+    {{ end }}    
+  </p>
+  {{ end }}
 
-<style>
-  .site-footer {
-    padding: 0 0 1rem 0; /* Top padding removed to accommodate the line */
-    position: relative;
-  }
-  
-  .footer-top-line {
-    height: 1px;
-    background-color: #e0e0e0; /* Light gray color */
-    width: 100%;
-    margin-bottom: 1rem; /* Space between line and content */
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  /* Rest of your existing CSS remains the same */
-  .footer-map {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .footer-center {
-    text-align: center;
-    padding: 0 10px;
-  }
-  
-  .powered-by {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .back-to-top i {
-    font-size: 1.2rem;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      gap: 10px;
-    }
+  <p class="powered-by">
+    {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; Sen Zhao {{ end }}
+  </p>
+
+  <p class="powered-by">
+    Powered with 
+    <a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy</a>
+  </p>
+
+    <span class="float-left" aria-hidden="true"> 
+      <script type="text/javascript" id="clstr_globe" 
+        src="//clustrmaps.com/globe.js?d=C1DlDByu-2fApAO7ih9XyNNB7syFspDFBCnj--s0GXY&w=150&h=150">
+      </script>
+
+     </span>
+
+    {{ if ne .Type "docs" }}
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    {{ end }}
     
-    .footer-map {
-      margin: 0 auto;
-    }
-  }
-</style>
+</footer>

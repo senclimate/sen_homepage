@@ -2,73 +2,191 @@
 {{ $page := .page }}
 {{ $hash_id := .hash_id }}
 
-<!-- Indicators -->
-<ol class="carousel-indicators">
-  {{ range $index, $item := $page.Params.item }}
-  <li data-target="#{{$hash_id}}" data-slide-to="{{$index}}" {{if eq $index 0}}class="active"{{end}}></li>
-  {{ end }}
-</ol>
+<style>
+  /* Remove top margin from carousel container */
+  #{{ $hash_id }} {
+    margin: 0 0 2rem 0; /* Only bottom margin remains */
+  }
+  
+  /* Remove any potential padding from the container */
+  #{{ $hash_id }} .container {
+    padding-top: 0;
+  }
+  
+  /* Adjust carousel item padding if needed */
+  #{{ $hash_id }} .carousel-item {
+    min-height: {{ $page.Params.height | default "calc(40vh - 70px)" }};
+    padding: 3rem 0; /* Only bottom padding remains */
+    transition: transform 0.6s ease;
+  }
 
-<!-- Carousel slides wrapper -->
-<div class="carousel-inner">
-  {{ range $index, $item := $page.Params.item }}
+  /* Keep all your existing styles below */
+  #{{ $hash_id }} .carousel-inner {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+  
+  #{{ $hash_id }} .hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  }
+  
+  #{{ $hash_id }} .hero-lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    max-width: 800px;
+  }
+  
+  #{{ $hash_id }} .btn-light {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border-width: 2px;
+  }
+  
+  #{{ $hash_id }} .btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+  
+  #{{ $hash_id }} .carousel-indicators {
+    bottom: 20px;
+  }
+  
+  #{{ $hash_id }} .carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border: 2px solid transparent;
+  }
+  
+  #{{ $hash_id }} .carousel-indicators .active {
+    background-color: white;
+  }
+  
+  #{{ $hash_id }} .carousel-control-prev,
+  #{{ $hash_id }} .carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+  }
+  
+  /* Content container */
+  #{{ $hash_id }} .hero-content {
+    background-color: rgba(0,0,0,0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
 
-    {{ $style_bg := "" }}
-    {{with $page.Params.height}}
-      {{ $style_bg = printf "%s height: %s;" $style_bg . }}
-    {{end}}
-    {{ if $item.overlay_color }}
-      {{ $style_bg = printf "%s background-color: %s;" $style_bg ($item.overlay_color | default "transparent") }}
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    #{{ $hash_id }} .hero-title {
+      font-size: 1.8rem;
+    }
+    
+    #{{ $hash_id }} .hero-lead {
+      font-size: 1.1rem;
+    }
+    
+    #{{ $hash_id }} .carousel-item {
+      padding: 2rem 0;
+    }
+    
+    #{{ $hash_id }} .btn-light {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<div id="{{ $hash_id }}" class="carousel slide" data-ride="carousel" data-interval="{{ $page.Params.interval | default 5000 }}">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    {{ range $index, $item := $page.Params.item }}
+    <li data-target="#{{ $hash_id }}" data-slide-to="{{ $index }}" {{ if eq $index 0 }}class="active"{{ end }}></li>
     {{ end }}
-    {{ if $item.overlay_img }}
-      {{ $bg_img := resources.Get (printf "media/%s" $item.overlay_img) }}
-      {{ if $bg_img }}
-        {{ $style_bg = printf "%sbackground-image: url('%s');" $style_bg $bg_img.Permalink }}
-      {{ else }}
-        {{ errorf "Couldn't find `%s` in the `assets/media/` folder - please add it." $item.overlay_img }}
+  </ol>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    {{ range $index, $item := $page.Params.item }}
+      {{ $style_bg := "" }}
+      {{ with $page.Params.height }}
+        {{ $style_bg = printf "%s min-height: %s;" $style_bg . }}
       {{ end }}
-      {{ if $item.overlay_filter }}
-        {{ $style_bg = printf "%sfilter: brightness(%s);" $style_bg (string $item.overlay_filter) }}
+      {{ if $item.overlay_color }}
+        {{ $style_bg = printf "%s background-color: %s;" $style_bg ($item.overlay_color | default "transparent") }}
       {{ end }}
-   {{ end }}
-
-  <div class="wg-hero dark carousel-item{{if eq $index 0}} active{{end}}" style="{{$style_bg | safeCSS}}">
-    <div class="container" style="text-align: {{$item.align | default "left"}};">
-        <h1 class="hero-title" style="font-size: 36px; @media (max-width: 768px) { font-size: 20px; }">
-          {{ with $item.title }}{{ . | markdownify | emojify }}{{ end }}
-        </h1>
-
-        {{ with $item.content }}
-        
-        <p class="hero-lead" style="{{if eq $item.align "center"}}margin: 0 auto 0 auto;{{else if eq $item.align "right"}}margin-left: auto; margin-right: 0{{end}}">
-          {{ . | markdownify | emojify }}
-        </p>
+      {{ if $item.overlay_img }}
+        {{ $bg_img := resources.Get (printf "media/%s" $item.overlay_img) }}
+        {{ if $bg_img }}
+          {{ $style_bg = printf "%s background-image: url('%s'); background-size: cover; background-position: center;" $style_bg $bg_img.Permalink }}
+        {{ else }}
+          {{ errorf "Couldn't find `%s` in the `assets/media/` folder - please add it." $item.overlay_img }}
         {{ end }}
+        {{ if $item.overlay_filter }}
+          {{ $style_bg = printf "%s filter: brightness(%s);" $style_bg (string $item.overlay_filter) }}
+        {{ end }}
+      {{ end }}
 
-        {{ if $item.cta_url }}
-        {{ $pack := or .cta_icon_pack "fas" }}
-        {{ $pack_prefix := $pack }}
-        {{ if in (slice "fab" "fas" "far" "fal") $pack }}
-          {{ $pack_prefix = "fa" }}
-        {{ end }}
-        <p>
-          <a href="{{ $item.cta_url }}" class="btn btn-light btn-lg">
-            {{- with $item.cta_icon -}}<i class="{{ $pack }} {{ $pack_prefix }}-{{ . }}" style="padding-right: 10px;"></i>{{- end -}}
-            {{- $item.cta_label | emojify | safeHTML -}}
-          </a>
-        </p>
-        {{ end }}
+      <div class="carousel-item wg-hero dark{{ if eq $index 0 }} active{{ end }}" style="{{ $style_bg | safeCSS }}">
+        <div class="container">
+          <div class="hero-content" style="text-align: {{ $item.align | default "left" }};">
+            <h1 class="hero-title">
+              {{ with $item.title }}{{ . | markdownify | emojify }}{{ end }}
+            </h1>
+
+            {{ with $item.content }}
+            <div class="hero-lead" style="{{ if eq $item.align "center" }}margin: 0 auto;{{ else if eq $item.align "right" }}margin-left: auto; margin-right: 0;{{ end }}">
+              {{ . | markdownify | emojify }}
+            </div>
+            {{ end }}
+
+            {{ if $item.cta_url }}
+              {{ $pack := or $item.cta_icon_pack "fas" }}
+              {{ $pack_prefix := $pack }}
+              {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+                {{ $pack_prefix = "fa" }}
+              {{ end }}
+              <div class="hero-cta">
+                <a href="{{ $item.cta_url }}" class="btn btn-light btn-lg">
+                  {{ with $item.cta_icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ . }}" style="padding-right: 10px;"></i>{{ end }}
+                  {{ $item.cta_label | emojify | safeHTML }}
+                </a>
+              </div>
+            {{ end }}
+          </div>
+        </div>
       </div>
+    {{ end }}
   </div>
-  {{ end }}
+
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#{{ $hash_id }}" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#{{ $hash_id }}" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
-<!-- Left and right controls -->
-<a class="carousel-control-prev" href="#{{$hash_id}}" data-slide="prev">
-  <span class="carousel-control-prev-icon"></span>
-  <span class="sr-only">Previous</span>
-</a>
-<a class="carousel-control-next" href="#{{$hash_id}}" data-slide="next">
-  <span class="carousel-control-next-icon"></span>
-  <span class="sr-only">Next</span>
-</a>
+<!-- Fallback initialization -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if carousel is already initialized
+  if (typeof $().carousel === 'function' && $('#{{ $hash_id }}').hasClass('carousel')) {
+    $('#{{ $hash_id }}').carousel();
+  }
+});
+</script>
