@@ -14,7 +14,7 @@ role: Assistant Researcher
 
 # Organizations/Affiliations
 organizations:
-- name: School of Ocean and Earth Science and Technology, University of Hawaii at Mānoa
+- name: University of Hawaiʻi at Mānoa
   url: "https://www.soest.hawaii.edu/soestwp/"
 
 # Short bio (displayed in user profile at end of posts)
@@ -95,8 +95,7 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-    - Principal Investigators
-    - Researchers
+- Principal Investigators
 # - Visitors
 
 ---

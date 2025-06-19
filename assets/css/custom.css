@@ -1,0 +1,6 @@
+
+
+/* Custom font size for top navigation bar links */
+.navbar .nav-link {
+  font-size: 28px; /* Adjust to your desired size */
+}

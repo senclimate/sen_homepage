@@ -29,16 +29,23 @@
   weight = 50
 
 [[main]]
-  identifier = "climate"
   name       = "Climate"
-  url        = "climate/"
+  url        = "climate/"       # Makes it clickable
   weight     = 60
-  
-# [[main]]
-#   name       = "XRO"
-#   url        = "XRO/"
-#   weight     = 60
+  identifier = "climate"        # Required for dropdown children
 
+[[main]]
+  name       = "Operational XRO Forecast"
+  url        = "climate/xro"
+  weight     = 61
+  parent = "climate"
+  
+[[main]]
+  name       = "Atlas"
+  url        = "climate/atlas"
+  weight     = 62
+  parent = "climate"
+  
 
 [[main]]
   name = "Posts"
@@ -58,10 +65,10 @@
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 
-[[main]]
-  name = "CV"
-  url = "cv_sen.pdf"
-  weight = 110
+# [[main]]
+#   name = "CV"
+#   url = "cv_sen.pdf"
+#   weight = 110
 
 
 #[[main]]
