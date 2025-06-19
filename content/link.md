@@ -14,7 +14,6 @@ draft: false
 share: false
 editable: true  # Allow visitors to edit the page? Supported by the Page, Post, and Docs content types.
 
-
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
@@ -30,6 +29,10 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+
++++
+# A Recent Blog Posts section created with the Pages widget.
+# This section displays recent blog posts from `content/post/`.
 
 <!-- {{% toc %}} -->
 

@@ -11,7 +11,7 @@ authors:
 date: '2025-06-18'
 publishDate: '2025-06-18T08:26:12.527981Z'
 publication_types: ["2"]
-publication: '**_Proceedings of the National Academy of Sciences_**, 25, e2426048122'
+publication: '**_Proceedings of the National Academy of Sciences_**, 122(25), e2426048122'
 doi: 10.1073/pnas.2426048122
 abstract: CO2 mitigation policy is expected to suppress global warming and its climate
   impact; however, this study found that CO2 mitigation could cause an abrupt shortening

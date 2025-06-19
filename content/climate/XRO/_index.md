@@ -201,10 +201,10 @@ The XRO is an e**X**tended nonlinear **R**echarge **O**scillator model for El Ni
 
 
 ### XRO ENSO forecast skill
-![Forecast correlation skill (ACC) for Niño3.4 across model combinations derived from different SST and WWV data](XRO_Nino34_out_of_sample_skill_2012-2024.png)
+![Forecast correlation skill (ACC) for Niño3.4 across model combinations derived from different SST and WWV data](/XRO_skills/XRO_Nino34_out_of_sample_skill_2012-2024.png)
 **Figure 1**: Out-of-sample forecast accuracy from XRO trained on 1982–2011 data and verified over 2012–2024. Lines show correlation skill as a function of lead month for different combinations of SST and WWV datasets (e.g., `OISSTv2_godas`, `ERA5_oras5`, etc.).
 
-![Forecast correlation skill (ACC) for Niño3.4 across model combinations derived from different SST and WWV data](XRO_Nino34_in_sample_skill_1982-2024.png)
+![Forecast correlation skill (ACC) for Niño3.4 across model combinations derived from different SST and WWV data](/XRO_skills/XRO_Nino34_in_sample_skill_1982-2024.png)
 **Figure 2**: In-sample forecast accuracy from XRO trained on 1982–2024.
 
 ### Data source

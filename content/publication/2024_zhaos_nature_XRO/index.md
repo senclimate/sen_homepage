@@ -50,8 +50,9 @@ url_video:
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
   caption: ""
-  focal_point: ""
+  focal_point: "Smart"
   preview_only: false
+  filename: "/pubs/Zhao2024nature_XRO.jpg"
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.

@@ -74,9 +74,10 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
     endLevel = 3
 
 [imaging]
+  disabled = true  # This completely disables Hugo's image processing
   # resampleFilter = "NearestNeighbor"
-  quality = 100
-  anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
+  # quality = 100
+  # anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
 
 # Taxonomies.
 [taxonomies]

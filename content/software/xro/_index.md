@@ -9,7 +9,7 @@ title: Extended nonlinear recharge oscillator (XRO) model
 date: "2024-06-28T00:00:00Z"
 lastmod: "2024-06-28T00:00:00Z"
 draft: false  # Is this a draft? true/false
-toc: true  # Show table of contents? true/false
+toc: true   # Show table of contents? true/false
 type: book  # Do not modify.
 
 # Add menu entry to sidebar.
@@ -19,7 +19,7 @@ type: book  # Do not modify.
 
 ## Overview
 
-{{< figure library="true"  src="xro_schmetic.jpg" title="Schematic diagram of the XRO model" numbered="true" lightbox="true" width="100%"  lightbox-group="true">}}
+{{< figure library="true"  src="/pubs/Zhao2024nature_XRO.jpg" title="Schematic diagram of the XRO model" numbered="true" lightbox="true" width="100%"  lightbox-group="true">}}
 
 The XRO is an e**X**tended nonlinear **R**echarge **O**scillator model for El Niño-Southern Oscillation (ENSO) and other modes of variability in the global oceans ([Zhao et al. 2024](#ref-zhao-2024)). It builds on the legacies of the Hasselmann stochastic climate model capturing upper ocean memory in sea surface temperature (SST) variability ([Hasselmann, 1976](#ref-hasselmann-1976)), and the recharge oscillator model for the oscillatory core dynamics of ENSO ([Jin, 1997](#ref-jin-1997)). It constitutes a parsimonious representation of the climate system in a reduced variable and parameter space that still captures the essential dynamics of interconnected global climate variability. 
 

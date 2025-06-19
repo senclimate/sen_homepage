@@ -1,17 +1,10 @@
-{{/* Author profile page. */}}
-
 {{- define "main" -}}
 
 {{/* If an account has not been created for this user, just display their name as the title. */}}
-{{ if not .File }}
-<div class="universal-wrapper" style="margin: 0; padding: 0 1.5rem;">
-  <h1 style="margin: 0; padding: 0; line-height: 1.2;">{{ .Title | markdownify }}</h1> 
-</div>
-{{ end }}
-
+{{ partial "page_header.html" . }}
 
 <section id="profile-page">
-  <div class="container">
+  <div class="article-container">
     {{/* Show the About widget if an account exists for this user. */}}
     {{ if .File }}
       {{ $widget := "widgets/about.html" }}
@@ -29,8 +22,17 @@
         {{ range $query.ByDate.Reverse }}
         <li value="{{ $count }}">
           <div class="publication-item">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <span class="publication-date">{{ .Date.Format "January 2006" }}</span>
+            {{ if .Params.doi }}
+              <a href="https://doi.org/{{ .Params.doi }}" target="_blank" rel="noopener">{{ .Title }}</a>
+            {{ else }}
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ end }}
+            <div class="publication-meta">
+              {{ with .Params.publication }}
+                <span class="publication-journal">{{ . | markdownify }}</span>
+              {{ end }}
+              <span class="publication-date">{{ .Date.Format "Jan 2006" }}</span>
+            </div>
           </div>
           {{ $count = sub $count 1 }}
         </li>
@@ -68,23 +70,36 @@
   }
   
   .publication-item {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
   
   .publication-item a {
     color: #0066cc;
     text-decoration: none;
+    font-weight: 500;
   }
   
   .publication-item a:hover {
     text-decoration: underline;
   }
   
-  .publication-date {
-    display: block;
-    color: #666;
-    font-size: 0.9rem;
+  .publication-meta {
     margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .publication-journal {
+    font-style: italic;
+  }
+  
+  .publication-journal::after {
+    content: " · ";
+    color: #999;
+  }
+  
+  .publication-date {
+    color: #666;
   }
 </style>
 

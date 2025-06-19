@@ -2,7 +2,7 @@
 title: "El Niño-Southern Oscillation"
 subtitle: "Dynamics, Complexity, Predictability, and Future Changes"
 summary: "ENSO is most promienet"
-authors: ["senzhao"]
+authors: ["sen-zhao"]
 
 date: 2022-08-10T00:00:00Z
 lastmod: 2022-08-10T00:00:00Z
@@ -57,7 +57,7 @@ design:
 The El Niño-Southern Oscillation (ENSO) is the most prominent driver of seasonal-to-interannual climate variability on Earth, significantly influencing global weather & climate patterns, ecosystems, and economic systems. Reliable predictions and future projections are cruial for preparing and mitigating its widespread effects. We use hierarchies of climate modeling together with observational analyses to reveal ENSO multiscale dynamics and sources of ENSO predictability. We built the conceptual extended nonlinear Recharge Oscillator (XRO) model to both predict ENSO events and quantify the various sources of ENSO predictability from climate mode interactions.
 
 ### <span style="color:ORANGERED"> ENSO predictability</span>
-{{< cite page="/publication/2024_zhaos_nature_XRO" view="4" >}}
+{{< cite page="/publication/2024_zhaos_nature_XRO" view="3" >}}
 
 ### <span style="color:ORANGERED"> ENSO dynamics</span>
 {{< cite page="/publication/2021_zhaos_grl_cptsub" view="4" >}}

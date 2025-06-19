@@ -16,7 +16,7 @@ height = "calc(40vh - 70px)"  # Slide height.
 <p><strong><span style='font-size: 16px; color: yellow;'><em>
 Real-time forecasts of ENSO and other climate modes using the eXtended nonlinear Recharge Oscillator (XRO)
 </em></span></strong></p>
-<a href='https://senzhao.netlify.app/climate/xro/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #e0ffff; border-color: #40e0d0;'><i class='fas fa-signal'></i> Forecast Dashboard</a>
+<a href='climate/xro/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #e0ffff; border-color: #40e0d0;'><i class='fas fa-signal'></i> Forecast Dashboard</a>
 <a href='https://github.com/senclimate/XRO' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #afeeee; border-color: #00ced1;'><i class='fab fa-github'></i> Code</a>
 <a href='https://doi.org/10.1038/s41586-024-07534-6' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #f0e68c; border-color: #ffd700;'><i class='fas fa-globe'></i> Paper</a>
 """
@@ -53,7 +53,7 @@ Real-time forecasts of ENSO and other climate modes using the eXtended nonlinear
 Dynamics and predictability of coastal El Niño events, and implications for ENSO diversity
 </em></span></strong></p>
 <a href='https://www.christinakaramperidou.com/' class='btn btn-light'>Lead PI C. Karamperidou</a>
-<a href='https://senzhao.netlify.app/cv_sen.pdf' class='btn btn-light'>co-PI S. Zhao</a>
+<a href='cv_sen.pdf' class='btn btn-light'>co-PI S. Zhao</a>
 """
   align = "center"
   overlay_color = "#1453b4"
