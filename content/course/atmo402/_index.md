@@ -35,12 +35,12 @@ In spring semesters 2019 and 2020, I was teaching this course as a guest lecture
 
 First part introduces the isobaric coordinates, basic equations in isobaric coordinates, as well as the natural coordinates and balanced flow. 
 
-{{< icon name="download" pack="fas" >}} {{< staticref "atmo402/402_CH3_part1.pptx" "newtab" >}}402_CH3_part1.pptx{{< /staticref >}}
+{{< icon name="download" pack="fas" >}} {{< staticref "lectures/402_CH3_part1.pptx" "newtab" >}}402_CH3_part1.pptx{{< /staticref >}}
 
 
 The second part focus on the the gradient wind approximation and the thermal wind. 
 
-{{< icon name="download" pack="fas" >}} {{< staticref "atmo402/402_CH3_part2.pptx" "newtab" >}}402_CH3_part2.pptx{{< /staticref >}}
+{{< icon name="download" pack="fas" >}} {{< staticref "lectures/402_CH3_part2.pptx" "newtab" >}}402_CH3_part2.pptx{{< /staticref >}}
 
 
 ## <span style="color:ORANGERED">Chapter 4 Circulation, Vorticity and Potential Vorticity</span>
@@ -54,11 +54,11 @@ The second part focus on the the gradient wind approximation and the thermal win
 
 First part is the concept and equations of *Circulation and Vorticity*
 
-{{< icon name="download" pack="fas" >}} {{< staticref "atmo402/402_CH4_part2.pptx" "newtab" >}}402_CH4_part2.pptx{{< /staticref >}}
+{{< icon name="download" pack="fas" >}} {{< staticref "lectures/402_CH4_part2.pptx" "newtab" >}}402_CH4_part2.pptx{{< /staticref >}}
 
 Second part the concept and equations of concept and equation of *Potential Vorticity*
 
-{{< icon name="download" pack="fas" >}} {{< staticref "atmo402/402_CH4_part3.pptx" "newtab" >}}402_CH4_part3.pptx{{< /staticref >}}
+{{< icon name="download" pack="fas" >}} {{< staticref "lectures/402_CH4_part3.pptx" "newtab" >}}402_CH4_part3.pptx{{< /staticref >}}
 
 
 <!-- {{% staticref "atmo402/402_CH4_part1.pptx" "newtab" %}}Download the lecture note here{{% /staticref %}}. -->

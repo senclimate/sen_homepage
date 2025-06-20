@@ -13,7 +13,8 @@ doi: "10.1007/s00382-018-4324-y"
 tags: ["Rossby Wave", "Wave Ray Tracing", "Teleconnection"]
 image: 
   caption: "Figure: Schematic of the IPCO effects on Southern Hemisphere circulation and rainfall variability. "
-  focal_point: "Center"
+  focal_point: "Smart"
   preview_only: false
+  filename: "/pubs/2019_zhaos_cd_ipco.png"
 ---
 

@@ -14,11 +14,11 @@ height = "calc(40vh - 70px)"  # Slide height.
   title = "Operational XRO climate forecasts online"
   content = """
 <p><strong><span style='font-size: 16px; color: yellow;'><em>
-Real-time forecasts of ENSO and IOD using the eXtended nonlinear Recharge Oscillator (XRO)
+<a href="climate/xro/" style="color: yellow;">Real-time ENSO and IOD forecasts using the XRO updated monthly</a>
 </em></span></strong></p>
-<a href='climate/xro/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #e0ffff; border-color: #40e0d0;'><i class='fas fa-signal'></i> Forecast Dashboard</a>
-<a href='https://github.com/senclimate/XRO' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #afeeee; border-color: #00ced1;'><i class='fab fa-github'></i> Code</a>
-<a href='https://doi.org/10.1038/s41586-024-07534-6' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #f0e68c; border-color: #ffd700;'><i class='fas fa-globe'></i> Paper</a>
+<a href='climate/xro/data/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #e0ffff; border-color: #40e0d0;'><i class='fas fa-database'></i>   Forecast Data</a>
+<a href='https://github.com/senclimate/XRO' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #afeeee; border-color: #00ced1;'><i class='fab fa-github'></i> XRO code</a>
+<a href='https://doi.org/10.1038/s41586-024-07534-6' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #f0e68c; border-color: #ffd700;'><i class='fas fa-globe'></i> XRO Nature article</a>
 """
   align = "center"
   overlay_color = "#1453b4"
@@ -38,12 +38,15 @@ Real-time forecasts of ENSO and IOD using the eXtended nonlinear Recharge Oscill
 <a href='https://rdcu.be/dPm1w' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #98fb98; border-color: #32cd32;'><i class='fas fa-file-pdf'></i> Research Briefing</a>
 <a href='https://github.com/senclimate/XRO' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #afeeee; border-color: #00ced1;'><i class='fab fa-github'></i> Code</a>
 <a href='https://www.soest.hawaii.edu/soestwp/announce/news/el-nino-forecasts-18-months/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #ffb6c1; border-color: #ff69b4;'><i class='fas fa-newspaper'></i> SOEST News</a>
-<a href='https://paper.sciencenet.cn/htmlpaper/2024/6/202462717022913106082.shtm' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #add8e6; border-color: #87ceeb;'>科学网</a>
+<a href='https://www.nsf.gov/news/scientists-extend-el-nino-forecasts-18-months' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #ffb6c1; border-color: #ff69b4;'><i class='fas fa-newspaper'></i> NSF Stories</a>
+<a href='https://cpo.noaa.gov/new-model-enhances-el-nino-southern-oscillation-enso-forecasting/' class='btn btn-light' style='font-size: 12px; padding: 5px 5px; color: black; background-color: #ffb6c1; border-color: #ff69b4;'><i class='fas fa-newspaper'></i> NOAA News</a>
+
 """
   align = "center"
   overlay_color = "#1453b4"
   overlay_filter = 0.95
   overlay_img = "BigIsland_2.jpg"
+  
 
 # Slide 2: NSF funding announcement
 [[item]]
