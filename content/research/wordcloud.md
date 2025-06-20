@@ -1,6 +1,6 @@
 ---
-title: "Research Word Cloud"
-subtitle: "Key Questions"
+title: "Key Research Questions"
+subtitle: "Word Cloud"
 summary: ""
 authors: ["sen-zhao"]
 
@@ -56,7 +56,7 @@ design:
 
 ## Key research questions  
 
-### 1. **ENSO Complexity and Predictability**  
+### 1. **ENSO Dynamics, Complexity and Predictability**  
 **What governs the dynamics, complexity, and predictability of El Niño–Southern Oscillation (ENSO)?**  
 How do observations and climate models compare in capturing ENSO's evolution, impacts, and seasonal predictability? What new insights can improve ENSO forecasting?  
 
@@ -68,5 +68,3 @@ Can we quantify these interbasin teleconnections in observations and models? How
 **What drives the occurrence and intensity of heatwaves, droughts, and floods, marine heatwaves and ocean waves extremes?** 
 How are these extremes and their compounding effects linked to global climate modes, and how might their frequency and intensity shift in a warming world?
 
-
----

@@ -1,7 +1,7 @@
 ---
 title: "El Niño-Southern Oscillation"
 subtitle: "Dynamics, Complexity, Predictability, and Future Changes"
-summary: "ENSO is most promienet"
+summary: ""
 authors: ["sen-zhao"]
 
 date: 2022-08-10T00:00:00Z

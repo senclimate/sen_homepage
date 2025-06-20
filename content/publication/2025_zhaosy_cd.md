@@ -1,7 +1,7 @@
 ---
 title: "Cross-equatorial Extension of the Pacific-South American Wave Train Enabled by Southeastern South American Rainfall"
-date: 2024-11-01
-publishDate: 2024-07-11T01:48:20.695096Z
+date: 2025-01-01
+publishDate: 2024-11-26T01:48:20.695096Z
 authors: ["Siyu Zhao", "Rong Fu", "Sen Zhao", "Fei-Fei Jin", "Hui Wang"]
 publication_types: ["2"]
 abstract: ""

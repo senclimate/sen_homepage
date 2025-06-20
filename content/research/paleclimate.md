@@ -37,8 +37,4 @@ projects: []
 {{< cite page="/publication/2022_shif_jgra" view="4" >}}
 {{< cite page="/publication/2019_shif_grl" view="4" >}}
 {{< cite page="/publication/2017_shif_cp_palo" view="4" >}}
-{{< cite page="/publication/2016_yang_3p_palo" view="4" >}}
 {{< cite page="/publication/2015_shif_cc_palo" view="4" >}}
-{{< cite page="/publication/2014_shif_qs_palo" view="4" >}}
-
-
