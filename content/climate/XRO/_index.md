@@ -2,8 +2,8 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 linktitle: "ENSO Forecast"
-summary: "Climate hindicasts and forecasts using the Extended nonlinear recharge oscillator (XRO) model "
-weight: 2
+summary: "Real-time climate forecasts using the eXtended nonlinear recharge oscillator (XRO) model "
+weight: 1
 
 # Page metadata.
 title: Operational XRO Climate Forecasts
@@ -13,13 +13,18 @@ draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
 
+image:
+ focal_point: Center
+ filename: "XRO_plume/2023-06_Nino34.png"
+ maxheight: 340px
+
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 
 ---
 
-### 📝 XRO Niño3.4 SST anomaly monthly forecast
+### XRO Niño3.4 SST anomaly monthly forecast
 
 <style>
   #image-selector {

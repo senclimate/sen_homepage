@@ -55,12 +55,40 @@
       <ul class="navbar-nav d-md-inline-flex" style="font-size: 1.0rem;">
         {{ range site.Menus.main }}
 
+        
         {{ if .HasChildren }}
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" style="font-size: 1.0rem;">
-            {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
-            <span class="caret"></span>
-          </a>
+        <li class="nav-item dropdown" style="position: relative;">
+          {{/* Set target for link */}}
+          {{ $.Scratch.Set "target" "" }}
+          {{ if gt (len .URL) 4 }}
+            {{ if eq "http" (slicestr .URL 0 4) }}
+              {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+          {{ end }}
+        
+          {{/* Get active page status */}}
+          {{ $is_link_in_current_path := false }}
+          {{ $is_widget_page := or $current_page.IsHome (eq $current_page.Type "widget_page") }}
+          {{ $hash := findRE "#(.+)" .URL }}
+        
+          {{ if $current_page.IsHome | and (or (eq .URL "/") (eq .URL "")) }}
+            {{ $is_link_in_current_path = true }}
+          {{ else if gt (len .URL) 1 }}
+            {{ $is_link_in_current_path = in $current_page.RelPermalink .URL }}
+          {{ end }}
+        
+          <div style="display: inline-flex; align-items: center;">
+            {{/* Main clickable link - REMOVED DROPDOWN-TOGGLE CLASS HERE */}}
+            <a href="{{ .URL | relLangURL }}" 
+               class="nav-link {{if and $highlight_active_link $is_link_in_current_path }} active{{end}}" 
+               {{ ($.Scratch.Get "target") | safeHTMLAttr }}
+               style="font-size: 1.0rem; padding-right: 0.25rem !important;">
+              {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
+            </a>
+            {{/* White dropdown icon */}}
+    <span style="display: inline-block; width: 0; height: 0; vertical-align: middle; border-top: 0.3em solid #ffffff; border-right: 0.3em solid transparent; border-left: 0.3em solid transparent;"></span>
+          </div>
+        
           <div class="dropdown-menu" style="font-size: 1.0rem;">
             {{ range .Children }}
               <a class="dropdown-item" href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
@@ -69,7 +97,7 @@
             {{ end }}
           </div>
         </li>
-
+                  
         {{ else }}
 
         {{/* Set target for link. */}}

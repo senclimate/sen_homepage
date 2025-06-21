@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: A stochastic-dynamical model (SDM) for Indian Ocean Dipole (IOD)
 summary: The SDM for the IOD is a simple model to predict the IOD using seasonally modulated El Niño-Southern Oscillation (ENSO) forcing together with a seasonally modulated Indian Ocean coupled ocean-atmosphere feedback.
-weight: 1
+weight: 3
 
 # Page metadata.
 title: A stochastic-dynamical model (SDM) for Indian Ocean Dipole (IOD)

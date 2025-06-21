@@ -12,6 +12,10 @@ draft: false  # Is this a draft? true/false
 toc: true   # Show table of contents? true/false
 type: book  # Do not modify.
 
+image:
+ focal_point: Center
+ filename: "pubs/XRO_logo.png"
+  
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.

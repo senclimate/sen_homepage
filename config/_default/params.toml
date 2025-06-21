@@ -156,10 +156,10 @@ list_delimiter = ", "
 gravatar = false
 
 ## Align the main menu to the right of the page? (true/false)
-## menu_align_right = true
+menu_align_right = true
 
 # Main menu alignment (l = left, c = center, r = right) and logo options.
-main_menu = {enable = true, align = "r", show_logo = true, highlight_active_link = false, show_language = false, show_day_night = true, show_search = true}
+main_menu = {enable = true, align = "r", show_logo = true, highlight_active_link = true, show_language = false, show_day_night = false, show_search = false, show_translations = false}
 
 # Show estimated reading time for posts? (true/false)
 reading_time = false

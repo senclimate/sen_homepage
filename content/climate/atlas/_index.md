@@ -1,7 +1,7 @@
 ---
 linktitle: "Atlas of Climatology and Anomaly"
 summary: "The goal of the Atlas of Climatology and Anomaly is to provide the international scientific community and wider general public with an illustrative material in support of climate change studies."
-weight: 1
+weight: 2
 
 title: "Atlas of Climatology and Anomaly"
 date: "2019-04-09"
@@ -9,6 +9,13 @@ lastmod: "2020-05-05"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
+
+
+image:
+ focal_point: Left
+ filename: "atlas_precip/precip_annclim_cmap_1981-2010.png"
+ maxheight: 250px
+
 
 menu:
   atlas:

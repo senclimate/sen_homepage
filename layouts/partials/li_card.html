@@ -1,9 +1,9 @@
 {{ $item := . }}
 
-{{/* Dynamic view adjusts to content type. */}}
+{{/* Dynamic view adjusts to content type */}}
 {{ $has_attachments := partial "functions/has_attachments" . }}
 
-{{/* Get summary. */}}
+{{/* Get summary */}}
 {{ $summary := "" }}
 {{ if $item.Params.summary }}
   {{ $summary = $item.Params.summary | markdownify | emojify }}
@@ -13,68 +13,171 @@
   {{ $summary = $item.Summary }}
 {{ end }}
 
-<div class="card-simple">
-
-  {{ if eq $item.Type "event" }}
-  <div class="article-metadata">
-    {{ if $item.Params.authors }}
-    <div>
-      {{ partial "page_metadata_authors" $item }}
-    </div>
-    {{ end }}
-    <span>
-      {{ partial "functions/get_event_dates" $item }}
-    </span>
-    {{ with $item.Params.location }}
-    <span class="middot-divider"></span>
-    <span>{{ . }}</span>
-    {{ end }}
-  </div>
-  {{ else }}
-    {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}
-  {{ end }}
-
+<div class="card">
+  {{/* Featured Image */}}
   {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
   {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
-  
-  {{/* Check for image specified in front matter */}}
   {{ $image_path := "" }}
   {{ with $item.Params.image.filename }}
     {{ $image_path = . }}
   {{ end }}
-  
+  {{ $max_height := $item.Params.image.maxheight | default "210px" }}
   {{ if or $resource $image_path }}
-  <a href="{{ $item.RelPermalink }}">
-    <div class="img-hover-zoom">
+    <a href="{{ $item.RelPermalink }}" class="card-image-link">
+      <div class="card-image-wrapper" style="max-height: {{ $max_height }}; overflow: hidden;">
       {{ with $resource }}
         {{ $image := .Fill (printf "808x455 %s" $anchor) }}
-        <img src="{{ $image.RelPermalink }}" class="article-banner" alt="{{ $item.Title }}" loading="lazy">
+        <img src="{{ $image.RelPermalink }}" class="card-img" alt="{{ $item.Title }}" loading="lazy">
       {{ else }}
         {{ if hasPrefix $image_path "/" }}
           {{ $image_path = strings.TrimPrefix "/" $image_path }}
         {{ end }}
-        <img src="{{ $image_path | relURL }}" class="article-banner" alt="{{ $item.Title }}" loading="lazy">
+        <img src="{{ $image_path | relURL }}" class="card-img" alt="{{ $item.Title }}" loading="lazy">
       {{ end }}
     </div>
-  </a>
+    </a>
   {{ end }}
 
-  <div class="section-subheading article-title mb-1 mt-3">
-    <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
-  </div>
+  <div class="card-body">
+    <h3 class="card-title">
+      <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
+    </h3>
 
-  {{ with $summary }}
-  <a href="{{ $item.RelPermalink }}" class="summary-link">
-    <div class="article-style">
-      <p>{{.}}</p>
+    {{ with $summary }}
+      <div class="card-text">
+          <p> {{ . | safeHTML }} </p>
+      </div>
+    {{ end }}
+
+    {{ if $has_attachments }}
+      <div class="card-links">
+        {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+      </div>
+    {{ end }}
+
+    <div class="card-meta">
+      {{ if eq $item.Type "event" }}
+        {{ if $item.Params.authors }}
+          <div class="card-authors">
+            {{ partial "page_metadata_authors" $item }}
+          </div>
+        {{ end }}
+        <div class="event-details">
+          <span>{{ partial "functions/get_event_dates" $item }}</span>
+          {{ with $item.Params.location }}
+            <span class="middot-divider"></span>
+            <span>{{ . }}</span>
+          {{ end }}
+        </div>
+      {{ else }}
+        {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}
+      {{ end }}
     </div>
-  </a>
-  {{ end }}
-
-  {{ if $has_attachments }}
-  <div class="btn-links">
-    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
   </div>
-  {{ end }}
-
 </div>
+
+<style>
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #eee;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-image-wrapper {
+    max-height: 210px;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-body {
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    margin-top: 0.05rem;
+    margin-bottom: 0.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #1a202c;
+  }
+
+  .card-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .card-title a:hover {
+    color: #2b6cb0;
+  }
+
+    .card-text {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #444;
+      font-weight: 500;
+      margin: 0.1rem  !important;
+      padding: 0.05rem  !important;
+    }
+    
+    .card-text p {
+      font-size: 0.85rem !important;
+      line-height: 1.65;
+      color: #444;
+      font-weight: 500;
+    }
+
+  .card-meta {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: auto;
+    padding-top: 0.15rem;
+    border-top: 1px solid #eee;
+  }
+
+  .card-authors,
+  .event-details {
+    margin-top: 0.25rem;
+  }
+
+  .middot-divider::before {
+    content: "·";
+    margin: 0 0.1rem;
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .card-body {
+      padding: 0.9rem 1rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+

@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: Rossby Wave Number and Wave Ray (WNWR) Package
 summary: WNWR is a software package for inverstigating the Rossby wave propagation in a horizontally non-uniform flow.
-weight: 1
+weight: 2
 
 # Page metadata.
 title: Rossby Wave Number and Wave Ray (WNWR) Package
@@ -11,6 +11,11 @@ lastmod: "2019-09-09T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
+
+image:
+ focal_point: Center
+ filename: "pubs/Rossby_wave_in_a_superflow.png"
+ maxheight: 220px
 
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.

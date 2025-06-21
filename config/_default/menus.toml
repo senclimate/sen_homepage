@@ -18,16 +18,38 @@
   url    = "publication/"
   weight = 30
 
+
 [[main]]
   name   = "Course"
   url    = "course/"
   weight = 40
+  
 
 [[main]]
   name   = "Software"
   url    = "software/"
   weight = 50
+  identifier = "software"        # Required for dropdown children
+  
+[[main]]
+  name       = "XRO"
+  url        = "software/xro"
+  weight     = 51
+  parent = "software"
 
+[[main]]
+  name       = "WNWR"
+  url        = "software/wnwr"
+  weight     = 52
+  parent = "software"
+  
+[[main]]
+  name       = "SDM"
+  url        = "software/sdm"
+  weight     = 53
+  parent = "software"
+  
+  
 [[main]]
   name       = "Climate"
   url        = "climate/"       # Makes it clickable
@@ -41,11 +63,10 @@
   parent = "climate"
   
 [[main]]
-  name       = "Atlas"
+  name       = "Climate Atlas"
   url        = "climate/atlas"
   weight     = 62
   parent = "climate"
-  
 
 [[main]]
   name = "Posts"
