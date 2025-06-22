@@ -9,7 +9,7 @@ title: "Operational XRO Climate Forecasts"
 date: "2024-08-09T00:00:00Z"
 lastmod: "2024-08-09T00:00:00Z"
 draft: false
-toc: false  # Show table of contents? true/false
+toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
 
 
