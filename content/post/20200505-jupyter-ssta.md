@@ -16,7 +16,7 @@ image:
   caption: "Sea surface temperature anomalies and ITCZ-related energy balance."
   focal_point: "Center"
   preview_only: false
-  filename: "/atlas_sst/sstdjf_multiples_ersst_1871-2020.png"
+  filename: "/atlas_sst/detrend_sstdjf_multiples_ersst_1871-2020.png"
   maxheight: 220px
 ---
 
