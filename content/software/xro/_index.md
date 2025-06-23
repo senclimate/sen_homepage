@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
-linktitle: Extended nonlinear recharge oscillator (XRO) model
-summary: The XRO is an eXtended nonlinear Recharge Oscillator model for El Niño-Southern Oscillation (ENSO) and other modes of variability in the global oceans.
+linktitle: XRO
+summary: XRO is an eXtended nonlinear Recharge Oscillator model for El Niño-Southern Oscillation (ENSO) and other modes of variability in the global oceans.
 weight: 1
 
 # Page metadata.

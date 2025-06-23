@@ -31,23 +31,23 @@
   weight = 50
   identifier = "software"        # Required for dropdown children
   
-[[main]]
-  name       = "XRO"
-  url        = "software/xro"
-  weight     = 51
-  parent = "software"
+# [[main]]
+#   name       = "XRO"
+#   url        = "software/xro"
+#   weight     = 51
+#   parent = "software"
 
-[[main]]
-  name       = "WNWR"
-  url        = "software/wnwr"
-  weight     = 52
-  parent = "software"
+# [[main]]
+#   name       = "WNWR"
+#   url        = "software/wnwr"
+#   weight     = 52
+#   parent = "software"
   
-[[main]]
-  name       = "SDM"
-  url        = "software/sdm"
-  weight     = 53
-  parent = "software"
+# [[main]]
+#   name       = "SDM"
+#   url        = "software/sdm"
+#   weight     = 53
+#   parent = "software"
   
   
 [[main]]
@@ -67,6 +67,15 @@
   url        = "climate/atlas"
   weight     = 62
   parent = "climate"
+  
+[[main]]
+  name       = "Climate Monitoring"
+  url        = "climate/monitoring"
+  weight     = 63
+  parent = "climate"
+
+
+
 
 [[main]]
   name = "Posts"

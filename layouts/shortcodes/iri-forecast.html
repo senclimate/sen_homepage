@@ -1,0 +1,23 @@
+{{/* Get current and previous dates */}}
+{{ $now := now }}
+{{ $currentYear := $now.Format "2006" }}
+{{ $currentMonthNum := (int ($now.Format "1")) }}
+{{ $currentMonthPadded := printf "%02d" $currentMonthNum }}
+
+{{ $prev := $now.AddDate 0 -1 0 }}
+{{ $prevYear := $prev.Format "2006" }}
+{{ $prevMonthNum := (int ($prev.Format "1")) }}
+
+{{/* URLs */}}
+{{ $iriTableUrl := printf "https://ensoforecast.iri.columbia.edu/cgi-bin/sst_table_img?month=%d&year=%s" $prevMonthNum $prevYear }}
+{{ $iriProbUrl := printf "https://iri.columbia.edu/wp-content/uploads/%s/%s/figure3.png" $currentYear $currentMonthPadded }}
+
+<figure>
+  <img src="{{ $iriTableUrl }}" alt="IRI ENSO Forecast Table" style="width:100%; max-width:800px;" />
+  <figcaption>IRI ENSO Forecast Table ({{ $prevMonthNum }}/{{ $prevYear }})</figcaption>
+</figure>
+
+<figure>
+  <img src="{{ $iriProbUrl }}" alt="IRI ENSO Forecast Probabilities" style="width:100%; max-width:800px;" />
+  <figcaption>IRI ENSO Forecast Probabilities ({{ $currentMonthNum }}/{{ $currentYear }})</figcaption>
+</figure>

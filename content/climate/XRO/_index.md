@@ -15,7 +15,7 @@ type: book  # Do not modify.
 
 image:
  focal_point: Center
- filename: "XRO_plume/2023-06_Nino34.png"
+ filename: "XRO_plume/XRO_Nino34_plumes.gif"
  maxheight: 340px
 
 # Add menu entry to sidebar.

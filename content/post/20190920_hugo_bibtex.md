@@ -12,7 +12,7 @@ diagram: true
 markup: goldmark
 tags: ["hugo-academic"]
 featured: false
-draft: false
+draft: true
 comments: false  # Show comments?
 
 # Featured image
