@@ -35,7 +35,7 @@ We use monthly gridded observation/reanalysis datasets listed as follows
 
 ## Methods
 
-- All the climatology is calculated using the period of 1981-2010, unless specifically stated otherwise.
+- All the climatology is calculated using the period of 1991-2020, unless specifically stated otherwise.
 - We also show the detrended SST anomaly by removing the quadratic trend.
 
 
