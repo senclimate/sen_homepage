@@ -53,6 +53,9 @@ projects: []
 - [Michael E. Mann (Penn State) Tools](http://www.meteo.psu.edu/holocene/public_html/Mann/tools/tools.php)
 - [Tapio Schneider (Caltech) Software](http://climate-dynamics.org/software/#about)
 
+
+- [Colormaps](https://www.simplifiedsciencepublishing.com/resources/best-color-palettes-for-scientific-figures-and-data-visualizations)
+  
 ## 🌀 Intermediate Complexity Models
 
 - [Linear Baroclinic Model (LBM)](http://ccsr.aori.u-tokyo.ac.jp/~hiro/sub/lbm.html)
