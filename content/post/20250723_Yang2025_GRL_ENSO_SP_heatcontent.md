@@ -7,7 +7,7 @@ authors: ["senzhao"]
 math: true
 diagram: true
 markup: goldmark
-tags: ["ENSO", "XRO", "Heat content", "Prediction"]
+tags: ["ENSO", "XRO", "Heat Content", "Prediction"]
 featured: false
 weight: 1
 
@@ -20,7 +20,6 @@ image:
   filename: "/postsMedia/fig_comment_Yang25_GRL_ENSO_skill_SP_D20.png"
   maxheight: 360px
 ---
-
 
 ## Comments on Yang et al. (2025)
 
@@ -298,18 +297,13 @@ sp.savefig(fig, fname='fig_comment_Yang25_GRL_ENSO_skill_SP_D20.png')
 ```
 
 
-    
 ![png](/postsMedia/fig_comment_Yang25_GRL_ENSO_skill_SP_D20.png)
     
 
 
-### Results and Dicussion
+### Results and Discussion
 
 The results presented here indicate that **off-equatorial South Pacific (SP) heat content (SSH or D20) does not significantly provide additional ENSO predictability** beyond what is already captured by **equatorial Pacific recharge dynamics** and **known interbasin feedbacks**, such as interactions with the Indian Ocean and Atlantic SST modes as represented in models like the eXtended nonlinear Recharge Oscillator (XRO).
 
 This suggests that the predictive signal in off-equatorial South Pacific heat content (SSH) may not be an independent source of ENSO skill, but rather reflects variability that is already encoded in equatorial and interbasin predictors.
 
-
-```python
-
-```
