@@ -7,7 +7,7 @@ authors: ["senzhao"]
 math: true
 diagram: true
 markup: goldmark
-tags: ["SST", "trend"]
+tags: ["ENSO", "XRO", "Heat Content", "Prediction""]
 featured: false
 weight: 1
 
@@ -21,11 +21,6 @@ image:
   maxheight: 360px
 ---
 
-
-# Does Off-Equatorial South Pacific Heat Content Really Provide Additional Predictive Skill of ENSO Beyond the Equatorial Pacific Heat Content?
-
-Sen Zhao
-July 23, 2025
 
 ## Comments on Yang et al. (2025)
 
