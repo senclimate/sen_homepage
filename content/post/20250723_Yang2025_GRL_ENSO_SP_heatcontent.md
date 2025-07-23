@@ -7,7 +7,7 @@ authors: ["senzhao"]
 math: true
 diagram: true
 markup: goldmark
-tags: ["ENSO", "XRO", "Heat Content", "Prediction""]
+tags: ["ENSO", "XRO", "Heat content", "Prediction"]
 featured: false
 weight: 1
 
