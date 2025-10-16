@@ -11,6 +11,27 @@ height = "calc(40vh - 70px)"  # Slide height.
 
 
 [[item]]
+  title = "Climate whiplash effects due to rapidly intensifying El Niño cycles"
+  content = """
+  <p><strong><span style='font-size:16px; color:yellow;'><em>
+  <a href="publication/2025_stuecker_nc/" style="color:yellow;">Our research comes out in Nature Communications</a>
+  </em></span></strong></p>
+  <a href='https://www.nature.com/articles/s41467-025-64619-0.pdf' class='btn btn-light' style='font-size:12px; padding:5px 5px; color:black; background-color:#98fb98; border-color:#32cd32;'><i class='fas fa-file-pdf'></i> PDF</a>
+  <a href='https://climatedata.ibs.re.kr/data/papers/stuecker-et-al-2025-nature-communications' class='btn btn-light' style='font-size:12px; padding:5px 5px; color:black; background-color:#e0ffff; border-color:#40e0d0;'><i class='fas fa-database'></i> Data</a>
+  <a href='https://github.com/senclimate/xphasesync' class='btn btn-light' style='font-size:12px; padding:5px 5px; color:black; background-color:#afeeee; border-color:#00ced1;'><i class='fab fa-github'></i> xphasesync</a>
+  <a href='https://github.com/senclimate/xentropy' class='btn btn-light' style='font-size:12px; padding:5px 5px; color:black; background-color:#afeeee; border-color:#00ced1;'><i class='fab fa-github'></i> xentropy</a>
+  <a href='https://www.soest.hawaii.edu/soestwp/announce/news/climate-whiplash-intensifying-el-nino/' class='btn btn-light' style='font-size:12px; padding:5px 5px; color:black; background-color:#ffb6c1; border-color:#ff69b4;'><i class='fas fa-newspaper'></i> SOEST News</a>
+  <a href='https://ibsclimate.org/news/climate-whiplash-effects-due-to-rapidly-intensifying-el-nino-cycles/' class='btn btn-light' style='font-size:12px; padding:5px 5px; color:black; background-color:#ffb6c1; border-color:#ff69b4;'><i class='fas fa-newspaper'></i> IBS News</a>
+
+  """
+  align = "center"
+  overlay_color = "rgba(255, 204, 204, 0.8)"   # soft light red
+  overlay_filter = 0.0                         # turn off dark overlay
+  overlay_img = "ENSO-states-viz.jpg"
+
+
+  
+[[item]]
   title = "Operational XRO climate forecasts online"
   content = """
 <p><strong><span style='font-size: 16px; color: yellow;'><em>

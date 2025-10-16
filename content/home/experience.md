@@ -35,13 +35,35 @@ date_format = "Jan 2006"
 #  """
 
 [[experience]]
+  title = "Associate Researcher"
+  company = "**School of Ocean and Earth Science and Technology, UH Mānoa**"
+  company_url = "https://www.soest.hawaii.edu/soestwp/"
+  company_logo = "logo_uhmanoa"
+  location    = "Hawaii, USA"
+  date_start  = "2025-10-01"
+  date_end    = ""
+  description = """
+  Research on the fundamental climate dynamics with societally relevant applications in sea-level prediction and climate resilience.
+  """
+  
+[[experience]]
+  title = "Associate Editor"
+  company = "**npj Climate and Atmospheric Science**"
+  company_url = "https://www.nature.com/npjclimatsci/"
+  company_logo = "logo_nature-portfolio"
+  date_start  = "2025-05-01"
+  date_end    = ""
+  description = """
+  """
+  
+[[experience]]
   title = "Assistant Researcher"
   company = "**School of Ocean and Earth Science and Technology, UH Mānoa**"
   company_url = "https://www.soest.hawaii.edu/soestwp/"
   company_logo = "logo_uhmanoa"
   location    = "Hawaii, USA"
   date_start  = "2021-11-01"
-  date_end    = ""
+  date_end    = "2025-09-30"
   description = """
   Research on the tropical climate dynamics and sea-level science with [Prof. Fei-Fei Jin](http://www.soest.hawaii.edu/met/Faculty/jff/Jin_feifei02010Jf.htm), [Prof. Philip Thompson](https://www.soest.hawaii.edu/oceanography/faculty/Thompson.html), [Prof. Christina Karamperidou](https://www.christinakaramperidou.com/) and [Prof. Malte Stuecker](http://www2.hawaii.edu/~stuecker/) 
   """

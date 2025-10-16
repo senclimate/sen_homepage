@@ -45,4 +45,6 @@ Rossby wave propagation is responsible for the large-scale atmospheric teleconne
 
 {{< cite page="/publication/2016_zhaos_sr_hd" view="4" >}}
 
+### <span style="color:ORANGERED"> ENSO teleconnection changes</span>
+{{< cite page="/publication/2025_stuecker_nc" view="4" >}}
 

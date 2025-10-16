@@ -68,5 +68,9 @@ The El Niño-Southern Oscillation (ENSO) is the most prominent driver of seasona
 {{< cite page="/publication/2020_jinff_agubook_enso" view="4" >}}
 {{< cite page="/publication/2025_iwakiri_pnas" view="4" >}}
 
+### <span style="color:ORANGERED"> ENSO future changes</span>
+{{< cite page="/publication/2025_stuecker_nc" view="4" >}}
+
 ### <span style="color:ORANGERED"> ENSO impacts</span>
 {{< cite page="/publication/2025_zhaos_grl" view="4" >}}
+
