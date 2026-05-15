@@ -111,7 +111,9 @@ image:
 </div>
 
 <div id="image-display">
-  <img id="selectedImage" src="" alt="Selected Image" style="display: none;">
+  <img id="selectedImage" src="" alt="ENSO Forecast" style="display: none;">
+  <img id="selectedImage2" src="" alt="ENSO Forecast Contributions" style="display: none; margin-top: 20px; margin-left: 20px;">
+  
   <p id="imageStatus" style="display: none;">Image unavailable for the selected date.</p>
 </div>
 
@@ -132,26 +134,45 @@ image:
     yearDropdown.value = Math.min(currentYear, endYear); // default to current or max available
   }
 
-  function updateImage() {
-    const year = document.getElementById('yearDropdown').value;
-    const month = document.getElementById('monthDropdown').value;
-    const imagePath = `/XRO_plume/${year}-${month}_Nino34.png`;
+function updateImage() {
+  const year = document.getElementById('yearDropdown').value;
+  const month = document.getElementById('monthDropdown').value;
 
-    const img = document.getElementById('selectedImage');
-    const status = document.getElementById('imageStatus');
+  const img1Path = `/XRO_plume/${year}-${month}_Nino34.png`;
+  const img2Path = `/XRO_plume/${year}-${month}_Nino34_quantify.png`;
 
-    const testImg = new Image();
-    testImg.onload = function () {
-      img.src = imagePath;
-      img.style.display = 'block';
-      status.style.display = 'none';
+  const img1 = document.getElementById('selectedImage');
+  const img2 = document.getElementById('selectedImage2');
+  const status = document.getElementById('imageStatus');
+
+  // ---- Load main forecast (required) ----
+  const testImg1 = new Image();
+  testImg1.onload = function () {
+    img1.src = img1Path;
+    img1.style.display = 'block';
+    status.style.display = 'none';
+
+    // ---- Load second image (optional) ----
+    const testImg2 = new Image();
+    testImg2.onload = function () {
+      img2.src = img2Path;
+      img2.style.display = 'block';
     };
-    testImg.onerror = function () {
-      img.style.display = 'none';
-      status.style.display = 'block';
+    testImg2.onerror = function () {
+      img2.style.display = 'none'; // silently ignore
     };
-    testImg.src = imagePath;
-  }
+    testImg2.src = img2Path;
+  };
+
+  testImg1.onerror = function () {
+    img1.style.display = 'none';
+    img2.style.display = 'none';
+    status.style.display = 'block';
+  };
+
+  testImg1.src = img1Path;
+}
+    
 
   function setDefaultMonth() {
     const monthDropdown = document.getElementById('monthDropdown');
