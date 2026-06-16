@@ -251,7 +251,8 @@ Operationally, we produce 18-month forecasts using the trained XRO model based o
 
 We conduct 1000-member stochastic forecasts with the same initial conditions for each month but different stochastic forcings, See Supplementary Fig. 16 in [Zhao et al. (2024)](#ref-zhao-2024) for how we make 1000-member stochastic forecasts in details.
 
-Due to delays in TAO updates, the OISSTv2_IAPv4 version has been adopted for the official release starting June 2025.
+- Due to delays in TAO updates, the OISSTv2_IAPv4 version has been adopted for the official release starting June 2025.
+- Due to delays in IAPv4 updates, the ORAS5 version has been adopted for the official release starting June 2026.
 
 ### References
 
