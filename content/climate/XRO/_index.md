@@ -139,10 +139,10 @@ function updateImage() {
   const month = document.getElementById('monthDropdown').value;
 
   const img1Path = `/XRO_plume/${year}-${month}_Nino34.png`;
-  const img2Path = `/XRO_plume/${year}-${month}_Nino34_quantify.png`;
+  // const img2Path = `/XRO_plume/${year}-${month}_Nino34_quantify.png`;
 
   const img1 = document.getElementById('selectedImage');
-  const img2 = document.getElementById('selectedImage2');
+  // const img2 = document.getElementById('selectedImage2');
   const status = document.getElementById('imageStatus');
 
   // ---- Load main forecast (required) ----
@@ -152,16 +152,16 @@ function updateImage() {
     img1.style.display = 'block';
     status.style.display = 'none';
 
-    // ---- Load second image (optional) ----
-    const testImg2 = new Image();
-    testImg2.onload = function () {
-      img2.src = img2Path;
-      img2.style.display = 'block';
-    };
-    testImg2.onerror = function () {
-      img2.style.display = 'none'; // silently ignore
-    };
-    testImg2.src = img2Path;
+    // // ---- Load second image (optional) ----
+    // const testImg2 = new Image();
+    // testImg2.onload = function () {
+    //   img2.src = img2Path;
+    //   img2.style.display = 'block';
+    // };
+    // testImg2.onerror = function () {
+    //   img2.style.display = 'none'; // silently ignore
+    // };
+    // testImg2.src = img2Path;
   };
 
   testImg1.onerror = function () {
