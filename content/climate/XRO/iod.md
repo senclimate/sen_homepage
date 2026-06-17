@@ -1,40 +1,35 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-linktitle: "ENSO Forecast"
-summary: "Real-time climate forecasts using the eXtended nonlinear recharge oscillator (XRO) model "
-weight: 1
+linktitle: "IOD Forecast"
+summary: "Climate hindicasts and forecasts using the Extended nonlinear recharge oscillator (XRO) model "
+weight: 2
 
 # Page metadata.
-title: Operational XRO Climate Forecasts
+title: "Operational XRO Climate Forecasts"
 date: "2024-08-09T00:00:00Z"
 lastmod: "2024-08-09T00:00:00Z"
-draft: false  # Is this a draft? true/false
+draft: false
 toc: false  # Show table of contents? true/false
 type: book  # Do not modify.
-
-image:
- focal_point: Center
- filename: "XRO_plume/XRO_Nino34_plumes.gif"
- maxheight: 340px
 
 # Add menu entry to sidebar.
 # - name: Declare this menu item as a parent with ID `name`.
 # - weight: Position of link in menu.
 
 ---
-### Niño3.4 and Relative Niño3.4 SST anomalies monthly forecast
 
-The plumes below show monthly Niño3.4 and relative Niño3.4 SST anomaly forecasts relative to the 1991–2020 climatology. Forecasts are generated using the XRO framework and uninitializted sensitivity experiments designed to isolate the contributions of different ocean-basin SST modes to ENSO evolution.
+### Indian Ocean Dipole (IOD) forecasts
+
+The plume below show monthly IOD SST anomaly forecasts relative to the 1991–2020 climatology. Forecasts are generated using the XRO framework and uninitializted sensitivity experiments designed to isolate the contributions of different ocean-basin SST modes to ENSO evolution.
 
 
 <div style="padding:12px 16px; border-left:4px solid #0072B2; background:#f8fafc; margin-bottom:15px;">
-<b>Forecast Experiments</b> 
+<b>Forecast Experiments</b>
 <ul>
 <li><span style="color:#0072B2;font-weight:600;"> XRO Forecast </span> — CTRL forecast </li>
-<li><span style="color:#E69F00;font-weight:600;"> w/o ExPO</span> — excludes extratropical Pacific NPMM and SPMM effects.</li>
-<li><span style="color:#009E73;font-weight:600;"> w/o IO+AO</span> — excludes tropical Indian and Atlantic Ocean SST variability.</li>
-<li><span style="color:#CC79A7;font-weight:600;"> w/o ExPO+IO+AO</span> — excludes both ExPO and tropical IO/AO influences.</li>
+<li><span style="color:#009E73;font-weight:600;"> w/o ENSO</span> — excludes equatorial Pacific ENSO SST and WWV effects.</li>
+<li><span style="color:#E69F00;font-weight:600;"> w/o Pacific</span> — excludes both equatorial Pacific ENSO SST and WWV and extratropical Pacific NPMM and SPMM effects.</li>
 </ul>
 See details of uninitialized sensitivity experiments described in
 <a href="https://www.nature.com/articles/s41586-024-07534-6" target="_blank" rel="noopener noreferrer">
@@ -42,7 +37,8 @@ See details of uninitialized sensitivity experiments described in
     
 </div>
 
-Differences between the CTRL forecast and the sensitivity experiments provide an estimate of the contributions of SST initial conditions in the extratropical Pacific, tropical Indian Ocean, and tropical Atlantic to the predicted evolution of ENSO.
+Differences between the CTRL forecast and the sensitivity experiments provide an estimate of the contributions of Pacific to the predicted evolution of IOD.
+
 
 <style>
 #image-selector {
@@ -56,7 +52,7 @@ Differences between the CTRL forecast and the sensitivity experiments provide an
   background: #fafafa;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-
+    
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
@@ -201,11 +197,8 @@ async function updateImage() {
   const year = document.getElementById("yearDropdown").value;
   const month = document.getElementById("monthDropdown").value;
 
-  const forecastPath = `/XRO_plume/${year}-${month}_Nino34.png`;
-  const contributionPath = `/RONI_plume/${year}-${month}_Nino34.png`;
-
+  const forecastPath = `/XRO_plume/${year}-${month}_IOD.png`;
   const forecastImg = document.getElementById("selectedImage");
-  const contributionImg = document.getElementById("selectedImage2");
   const status = document.getElementById("imageStatus");
 
   try {
@@ -215,17 +208,8 @@ async function updateImage() {
     forecastImg.style.display = "block";
     status.style.display = "none";
 
-    try {
-      await imageExists(contributionPath);
-      contributionImg.src = contributionPath;
-      contributionImg.style.display = "block";
-    } catch {
-      contributionImg.style.display = "none";
-    }
-
   } catch {
     forecastImg.style.display = "none";
-    contributionImg.style.display = "none";
     status.style.display = "block";
   }
 }

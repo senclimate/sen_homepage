@@ -1,15 +1,15 @@
 ---
 
-linktitle: "ENSO Forecast Data"
+linktitle: "Forecast Data"
 summary: ""
-weight: 1
+weight: 3
 
 # Page metadata.
 title: "Operational XRO Climate Forecasts"
 date: "2024-08-09T00:00:00Z"
 lastmod: "2024-08-09T00:00:00Z"
 draft: false
-toc: true  # Show table of contents? true/false
+toc: false  # Show table of contents? true/false
 type: book  # Do not modify.
 
 
