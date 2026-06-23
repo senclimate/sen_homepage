@@ -4,3 +4,66 @@
 .navbar .nav-link {
   font-size: 32px; /* Adjust to your desired size */
 }
+
+/* ─── Slider pill buttons ─────────────────────────────────────────────────────
+   Add this block to assets/css/custom.css (or your theme's custom stylesheet).
+   These classes replace the repeated inline styles on every slide button.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.slide-btn {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  border-width: 1.5px;
+  border-style: solid;
+  margin: 4px 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: filter 0.15s ease, transform 0.1s ease;
+  text-decoration: none !important;
+}
+
+.slide-btn:hover {
+  filter: brightness(0.88);
+  transform: translateY(-1px);
+}
+
+/* Semantic color categories */
+.slide-btn-pdf     { color: #000; background: #98fb98; border-color: #32cd32; } /* green  – PDF */
+.slide-btn-data    { color: #000; background: #e0ffff; border-color: #40e0d0; } /* cyan   – Data */
+.slide-btn-code    { color: #000; background: #afeeee; border-color: #00ced1; } /* teal   – Code / GitHub */
+.slide-btn-news    { color: #000; background: #ffb6c1; border-color: #ff69b4; } /* pink   – Press / News */
+.slide-btn-person  { color: #000; background: #add8e6; border-color: #87ceeb; } /* blue   – PI / Person */
+.slide-btn-journal { color: #000; background: #f0e68c; border-color: #ffd700; } /* gold   – Journal link */
+.slide-btn-dataset { color: #000; background: #d8bfd8; border-color: #dda0dd; } /* mauve  – Dataset / Zenodo */
+
+/* ─── Optional: slide title underline accent ──────────────────────────────────
+   Adds a thin animated gradient line beneath each slide's h1/h2 title,
+   evoking an ocean thermocline. Remove if your theme styles titles differently.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.carousel-item .carousel-caption h1,
+.carousel-item .carousel-caption h2 {
+  display: inline-block;
+  padding-bottom: 6px;
+  background-image: linear-gradient(90deg, #40e0d0, #1453b4, #40e0d0);
+  background-size: 200% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  animation: slide-underline 4s linear infinite;
+}
+
+@keyframes slide-underline {
+  0%   { background-position: left bottom; }
+  50%  { background-position: right bottom; }
+  100% { background-position: left bottom; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item .carousel-caption h1,
+  .carousel-item .carousel-caption h2 {
+    animation: none;
+  }
+}

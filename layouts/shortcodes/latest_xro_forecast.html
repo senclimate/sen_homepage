@@ -1,0 +1,26 @@
+{{ $nino := "" }}
+{{ $iod  := "" }}
+{{ range (readDir "static/XRO_plume") }}
+  {{ if strings.HasSuffix .Name "_Nino34.png" }}
+    {{ if gt .Name $nino }}{{ $nino = .Name }}{{ end }}
+  {{ end }}
+  {{ if strings.HasSuffix .Name "_IOD.png" }}
+    {{ if gt .Name $iod }}{{ $iod = .Name }}{{ end }}
+  {{ end }}
+{{ end }}
+
+<div style='display:flex; justify-content:center; gap:2px; margin-bottom:2px;'>
+  <a href='climate/xro/'>
+    <img src='/XRO_plume/{{ $nino }}' alt='Nino3.4 forecast plume'
+         style='height:calc(50vh - 160px); max-width:100%; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.5); transition:transform 0.2s; display:block;'
+         onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  </a>
+    
+  <!-- <a href='climate/xro/iod'>
+    <img src='/XRO_plume/{{ $iod }}' alt='IOD forecast plume'
+         style='height:calc(40vh - 160px); max-width:100%; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.5); transition:transform 0.2s; display:block;'
+         onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+  </a> -->
+    
+</div>
+

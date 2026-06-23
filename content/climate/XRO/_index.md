@@ -180,10 +180,19 @@ function updateImage() {
   const img2 = document.getElementById('selectedImage2');
   const status = document.getElementById('imageStatus');
 
-  img1.onload = () => { img1.style.display = 'block'; status.style.display = 'none'; };
-  img1.onerror = () => { img1.style.display = 'none'; img2.style.display = 'none'; status.style.display = 'block'; };
+  // Main forecast image — shown as soon as it's ready, nothing waits on img2.
+  img1.onload = () => {
+    img1.style.display = 'block';
+    status.style.display = 'none';
+  };
+  img1.onerror = () => {
+    img1.style.display = 'none';
+    img2.style.display = 'none';
+    status.style.display = 'block';
+  };
   img1.src = img1Path;
 
+  // Second (RONI) image — fully independent, doesn't delay img1 in any way.
   img2.onload = () => { img2.style.display = 'block'; };
   img2.onerror = () => { img2.style.display = 'none'; };
   img2.src = img2Path;
