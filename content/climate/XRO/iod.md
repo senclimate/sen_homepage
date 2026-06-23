@@ -21,24 +21,6 @@ type: book  # Do not modify.
 
 ### Indian Ocean Dipole (IOD) forecasts
 
-The plume below show monthly IOD SST anomaly forecasts relative to the 1991–2020 climatology. Forecasts are generated using the XRO framework and uninitializted sensitivity experiments designed to isolate the contributions of different ocean-basin SST modes to ENSO evolution.
-
-
-<div style="padding:12px 16px; border-left:4px solid #0072B2; background:#f8fafc; margin-bottom:15px;">
-<b>Forecast Experiments</b>
-<ul>
-<li><span style="color:#0072B2;font-weight:600;"> XRO Forecast </span> — CTRL forecast </li>
-<li><span style="color:#009E73;font-weight:600;"> w/o ENSO</span> — excludes equatorial Pacific ENSO SST and WWV effects.</li>
-<li><span style="color:#E69F00;font-weight:600;"> w/o Pacific</span> — excludes both equatorial Pacific ENSO SST and WWV and extratropical Pacific NPMM and SPMM effects.</li>
-</ul>
-See details of uninitialized sensitivity experiments described in
-<a href="https://www.nature.com/articles/s41586-024-07534-6" target="_blank" rel="noopener noreferrer">
-<i>Zhao et al.</i> (2024, <i>Nature</i>) </a>
-    
-</div>
-
-Differences between the CTRL forecast and the sensitivity experiments provide an estimate of the contributions of Pacific to the predicted evolution of IOD.
-
 
 <style>
 #image-selector {
@@ -184,16 +166,7 @@ function populateMonths() {
   });
 }
 
-function imageExists(src) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(src);
-    img.onerror = reject;
-    img.src = src;
-  });
-}
-
-async function updateImage() {
+function updateImage() {
   const year = document.getElementById("yearDropdown").value;
   const month = document.getElementById("monthDropdown").value;
 
@@ -201,17 +174,9 @@ async function updateImage() {
   const forecastImg = document.getElementById("selectedImage");
   const status = document.getElementById("imageStatus");
 
-  try {
-    await imageExists(forecastPath);
-
-    forecastImg.src = forecastPath;
-    forecastImg.style.display = "block";
-    status.style.display = "none";
-
-  } catch {
-    forecastImg.style.display = "none";
-    status.style.display = "block";
-  }
+  forecastImg.onload = () => { forecastImg.style.display = 'block'; status.style.display = 'none'; };
+  forecastImg.onerror = () => { forecastImg.style.display = 'none'; img2.style.display = 'none'; status.style.display = 'block'; };
+  forecastImg.src = forecastPath;
 }
 
 function setDefaultMonth() {
@@ -263,6 +228,25 @@ document.addEventListener("DOMContentLoaded", () => {
   setDefaultMonth();
 });
 </script>
+
+The plume show monthly IOD SST anomaly forecasts relative to the 1991–2020 climatology. Forecasts are generated using the XRO framework and uninitializted sensitivity experiments designed to isolate the contributions of different ocean-basin SST modes to ENSO evolution.
+
+
+<div style="padding:12px 16px; border-left:4px solid #0072B2; background:#f8fafc; margin-bottom:15px;">
+<b>Forecast Experiments</b>
+<ul>
+<li><span style="color:#0072B2;font-weight:600;"> XRO Forecast </span> — CTRL forecast </li>
+<li><span style="color:#009E73;font-weight:600;"> w/o ENSO</span> — excludes equatorial Pacific ENSO SST and WWV effects.</li>
+<li><span style="color:#E69F00;font-weight:600;"> w/o Pacific</span> — excludes both equatorial Pacific ENSO SST and WWV and extratropical Pacific NPMM and SPMM effects.</li>
+</ul>
+See details of uninitialized sensitivity experiments described in
+<a href="https://www.nature.com/articles/s41586-024-07534-6" target="_blank" rel="noopener noreferrer">
+<i>Zhao et al.</i> (2024, <i>Nature</i>) </a>
+    
+</div>
+
+Differences between the CTRL forecast and the sensitivity experiments provide an estimate of the contributions of Pacific to the predicted evolution of IOD.
+
 
 
 {{% callout warning %}}

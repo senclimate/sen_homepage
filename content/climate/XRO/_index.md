@@ -25,25 +25,6 @@ image:
 ---
 ### Niño3.4 and Relative Niño3.4 SST anomalies monthly forecast
 
-The plumes below show monthly Niño3.4 and relative Niño3.4 SST anomaly forecasts relative to the 1991–2020 climatology. Forecasts are generated using the XRO framework and uninitializted sensitivity experiments designed to isolate the contributions of different ocean-basin SST modes to ENSO evolution.
-
-
-<div style="padding:12px 16px; border-left:4px solid #0072B2; background:#f8fafc; margin-bottom:15px;">
-<b>Forecast Experiments</b> 
-<ul>
-<li><span style="color:#0072B2;font-weight:600;"> XRO Forecast </span> — CTRL forecast </li>
-<li><span style="color:#E69F00;font-weight:600;"> w/o ExPO</span> — excludes extratropical Pacific NPMM and SPMM effects.</li>
-<li><span style="color:#009E73;font-weight:600;"> w/o IO+AO</span> — excludes tropical Indian and Atlantic Ocean SST variability.</li>
-<li><span style="color:#CC79A7;font-weight:600;"> w/o ExPO+IO+AO</span> — excludes both ExPO and tropical IO/AO influences.</li>
-</ul>
-See details of uninitialized sensitivity experiments described in
-<a href="https://www.nature.com/articles/s41586-024-07534-6" target="_blank" rel="noopener noreferrer">
-<i>Zhao et al.</i> (2024, <i>Nature</i>) </a>
-    
-</div>
-
-Differences between the CTRL forecast and the sensitivity experiments provide an estimate of the contributions of SST initial conditions in the extratropical Pacific, tropical Indian Ocean, and tropical Atlantic to the predicted evolution of ENSO.
-
 <style>
 #image-selector {
   display: flex;
@@ -188,46 +169,24 @@ function populateMonths() {
   });
 }
 
-function imageExists(src) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(src);
-    img.onerror = reject;
-    img.src = src;
-  });
-}
+function updateImage() {
+  const year = document.getElementById('yearDropdown').value;
+  const month = document.getElementById('monthDropdown').value;
 
-async function updateImage() {
-  const year = document.getElementById("yearDropdown").value;
-  const month = document.getElementById("monthDropdown").value;
+  const img1Path = `/XRO_plume/${year}-${month}_Nino34.png`;
+  const img2Path = `/RONI_plume/${year}-${month}_Nino34.png`;
 
-  const forecastPath = `/XRO_plume/${year}-${month}_Nino34.png`;
-  const contributionPath = `/RONI_plume/${year}-${month}_Nino34.png`;
+  const img1 = document.getElementById('selectedImage');
+  const img2 = document.getElementById('selectedImage2');
+  const status = document.getElementById('imageStatus');
 
-  const forecastImg = document.getElementById("selectedImage");
-  const contributionImg = document.getElementById("selectedImage2");
-  const status = document.getElementById("imageStatus");
+  img1.onload = () => { img1.style.display = 'block'; status.style.display = 'none'; };
+  img1.onerror = () => { img1.style.display = 'none'; img2.style.display = 'none'; status.style.display = 'block'; };
+  img1.src = img1Path;
 
-  try {
-    await imageExists(forecastPath);
-
-    forecastImg.src = forecastPath;
-    forecastImg.style.display = "block";
-    status.style.display = "none";
-
-    try {
-      await imageExists(contributionPath);
-      contributionImg.src = contributionPath;
-      contributionImg.style.display = "block";
-    } catch {
-      contributionImg.style.display = "none";
-    }
-
-  } catch {
-    forecastImg.style.display = "none";
-    contributionImg.style.display = "none";
-    status.style.display = "block";
-  }
+  img2.onload = () => { img2.style.display = 'block'; };
+  img2.onerror = () => { img2.style.display = 'none'; };
+  img2.src = img2Path;
 }
 
 function setDefaultMonth() {
@@ -279,6 +238,25 @@ document.addEventListener("DOMContentLoaded", () => {
   setDefaultMonth();
 });
 </script>
+
+The plumes show monthly Niño3.4 and relative Niño3.4 SST anomaly forecasts relative to the 1991–2020 climatology. Forecasts are generated using the XRO framework and uninitializted sensitivity experiments designed to isolate the contributions of different ocean-basin SST modes to ENSO evolution.
+
+
+<div style="padding:12px 16px; border-left:4px solid #0072B2; background:#f8fafc; margin-bottom:15px;">
+<b>Forecast Experiments</b> 
+<ul>
+<li><span style="color:#0072B2;font-weight:600;"> XRO Forecast </span> — CTRL forecast </li>
+<li><span style="color:#E69F00;font-weight:600;"> w/o ExPO</span> — excludes extratropical Pacific NPMM and SPMM effects.</li>
+<li><span style="color:#009E73;font-weight:600;"> w/o IO+AO</span> — excludes tropical Indian and Atlantic Ocean SST variability.</li>
+<li><span style="color:#CC79A7;font-weight:600;"> w/o ExPO+IO+AO</span> — excludes both ExPO and tropical IO/AO influences.</li>
+</ul>
+See details of uninitialized sensitivity experiments described in
+<a href="https://www.nature.com/articles/s41586-024-07534-6" target="_blank" rel="noopener noreferrer">
+<i>Zhao et al.</i> (2024, <i>Nature</i>) </a>
+    
+</div>
+
+Differences between the CTRL forecast and the sensitivity experiments provide an estimate of the contributions of SST initial conditions in the extratropical Pacific, tropical Indian Ocean, and tropical Atlantic to the predicted evolution of ENSO.
 
 
 {{% callout warning %}}
