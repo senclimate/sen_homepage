@@ -5,7 +5,6 @@ publishDate: 2025-03-26T01:48:20.695096Z
 authors: ["Sen Zhao", "Ning Li", "Fei-Fei Jin", "Kwok Fai Cheung", "Zhaoqing Yang"]
 publication_types: ["2"]
 first_author: true
-abstract: ""
 featured: false
 publication: "**_Geophysical Research Letters_**, 52, 2024GL113127"
 doi: "10.1029/2024GL113127"

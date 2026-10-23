@@ -1,0 +1,12 @@
+{{ $nino := "" }}
+{{ range (readDir "static/XRO_plume") }}
+  {{ if strings.HasSuffix .Name "_Nino34.png" }}
+    {{ if gt .Name $nino }}{{ $nino = .Name }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $nino }}
+  <a href="{{ "climate/xro/" | relURL }}" aria-label="Open the latest Niño3.4 forecast">
+    <img src="{{ printf "/XRO_plume/%s" . | relURL }}" alt="Latest Niño3.4 forecast plume">
+  </a>
+{{ end }}

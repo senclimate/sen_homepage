@@ -13,7 +13,7 @@
       {{ partial $widget $params }}
     {{ end }}
 
-    {{ $query := where .Pages ".IsNode" false }}
+    {{ $query := where .Pages ".IsPage" true }}
     {{ $count := len $query }}
     {{ if $count }}
     <div class="publications-list">

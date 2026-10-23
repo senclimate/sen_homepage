@@ -86,11 +86,6 @@
   url = "post/"
   weight = 70
 
-[[main]]
-  name = "Links"
-  url = "link/"
-  weight = 90
-
 #[[main]]
 #  name = "Contact"
 #  url = "#contact"

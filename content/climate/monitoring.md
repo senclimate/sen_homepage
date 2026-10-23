@@ -3,7 +3,7 @@
 
 linktitle: "Climate Monitoring"
 summary: "Monitor key indicators of ocean–atmosphere variability from authoritative sources such as NOAA, IRI, and JAMSTEC."
-weight: 3
+weight: 4
 
 # Page metadata.
 title: Climate Monitoring

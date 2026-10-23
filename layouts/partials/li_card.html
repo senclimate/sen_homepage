@@ -1,4 +1,6 @@
 {{ $item := . }}
+{{ $card_url := $item.RelPermalink }}
+{{ with $item.Params.external_url }}{{ $card_url = . }}{{ end }}
 
 {{/* Dynamic view adjusts to content type */}}
 {{ $has_attachments := partial "functions/has_attachments" . }}
@@ -23,7 +25,7 @@
   {{ end }}
   {{ $max_height := $item.Params.image.maxheight | default "210px" }}
   {{ if or $resource $image_path }}
-    <a href="{{ $item.RelPermalink }}" class="card-image-link">
+    <a href="{{ $card_url }}" class="card-image-link">
       <div class="card-image-wrapper" style="max-height: {{ $max_height }}; overflow: hidden;">
       {{ with $resource }}
         {{ $image := .Fill (printf "808x455 %s" $anchor) }}
@@ -40,7 +42,7 @@
 
   <div class="card-body">
     <h3 class="card-title">
-      <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
+      <a href="{{ $card_url }}">{{ $item.Title }}</a>
     </h3>
 
     {{ with $summary }}

@@ -1,7 +1,7 @@
 ---
 linktitle: "Atlas of Climatology and Anomaly"
 summary: "The goal of the Atlas of Climatology and Anomaly is to provide the international scientific community and wider general public with an illustrative material in support of climate change studies."
-weight: 2
+weight: 3
 
 title: "Atlas of Climatology and Anomaly"
 date: "2019-04-09"

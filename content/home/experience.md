@@ -4,7 +4,7 @@
 widget   = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active   = true  # Activate this widget? true/false
-weight   = 2  # Order that this section will appear.
+weight   = 3  # Order that this section will appear.
 
 title = "Professional Experience"
 subtitle = ""
@@ -36,7 +36,7 @@ date_format = "Jan 2006"
 
 [[experience]]
   title = "Associate Researcher"
-  company = "**School of Ocean and Earth Science and Technology, UH Mānoa**"
+  company = "School of Ocean and Earth Science and Technology, UH Mānoa"
   company_url = "https://www.soest.hawaii.edu/soestwp/"
   company_logo = "logo_uhmanoa"
   location    = "Hawaii, USA"
@@ -48,7 +48,7 @@ date_format = "Jan 2006"
   
 [[experience]]
   title = "Associate Editor"
-  company = "**npj Climate and Atmospheric Science**"
+  company = "npj Climate and Atmospheric Science"
   company_url = "https://www.nature.com/npjclimatsci/"
   company_logo = "logo_nature-portfolio"
   date_start  = "2025-05-01"
@@ -58,7 +58,7 @@ date_format = "Jan 2006"
   
 [[experience]]
   title = "Assistant Researcher"
-  company = "**School of Ocean and Earth Science and Technology, UH Mānoa**"
+  company = "School of Ocean and Earth Science and Technology, UH Mānoa"
   company_url = "https://www.soest.hawaii.edu/soestwp/"
   company_logo = "logo_uhmanoa"
   location    = "Hawaii, USA"
@@ -70,7 +70,7 @@ date_format = "Jan 2006"
   
 [[experience]]
   title = "Postdoctoral Fellow"
-  company = "**Department of Atmospheric Sciences, UH Mānoa**"
+  company = "Department of Atmospheric Sciences, UH Mānoa"
   company_url = "http://www.soest.hawaii.edu/atmo/"
   company_logo = "logo_uhmanoa"
   location    = "Hawaii, USA"
@@ -82,7 +82,7 @@ date_format = "Jan 2006"
 
 [[experience]]
   title       = "Research Assistant"
-  company     = "**Institute of Atmospheric Physics, Chinese Academy of Sciences**"
+  company     = "Institute of Atmospheric Physics, Chinese Academy of Sciences"
   company_url = "http://www.iap.cas.cn/"
   company_logo = "logo_iap"
   location    = "Beijing, China"
