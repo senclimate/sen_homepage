@@ -1,0 +1,7 @@
+{
+  "name": "sen-homepage-build-tools",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}
