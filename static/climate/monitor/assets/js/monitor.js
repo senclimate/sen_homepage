@@ -4,6 +4,8 @@
   if (!root) return;
   const daily = root.dataset.frequency === 'day';
   const datasets = root.dataset.datasets.split(',');
+  const dataBase = root.dataset.base || '../data/';
+  const methodsHref = root.dataset.methodsHref || '../methods/';
   const products = (root.dataset.products || (daily ? 'sst' : 'sst')).split(',');
   const productDatasets = product => product === 'd20' ? ['ORAS5'] : datasets;
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -119,12 +121,14 @@
             <div id="cm-palette-preview" class="cm-palette-preview" aria-label="Palette color preview"></div>
           </div>
         </div>
-        <a id="cm-download" class="cm-download cm-sidebar-download" download>Download JSON ↗</a>
+        <a id="cm-download" class="cm-download cm-sidebar-download" download aria-label="Download JSON">
+          <span class="cm-download-icon" aria-hidden="true">↓</span>
+          <span>Download JSON</span>
+        </a>
 
       </aside>
 
       <main class="cm-main">
-        <div class="cm-stats" id="cm-stats"></div>
         <div id="cm-status" role="status"></div>
         <div id="cm-panels" class="cm-panels" aria-label="Climate index panels"></div>
         <div class="cm-panel-actions">
@@ -153,15 +157,15 @@
             </div>
             <div id="cm-count" aria-live="polite"></div>
             <div id="cm-years" class="cm-years" aria-label="Select years"></div>
-            <p class="cm-note">ENSO classifications depend on the selected dataset (<a href="../methods/#enso-event-classification">See Methods</a>).</p>
+            <p class="cm-note">ENSO classifications depend on the selected dataset (<a href="${methodsHref}#enso-event-classification">See Methods</a>).</p>
           </div>
       </aside>
     </div>`;
   const el = id => root.querySelector('#'+id);
   const setStatus = s => {el('cm-status').textContent = s;};
-  const getURL = () => `../data/${state.dataset}_${daily?'day_ssti':state.product==='d20'?'mon_d20i':'mon_ssti'}.json`;
-  const getClassificationURL = () => `../data/${state.classificationDataset}_classify_enso.json`;
-  const dataURL = (product,dataset) => `../data/${dataset}_${daily?'day_ssti':product==='d20'?'mon_d20i':'mon_ssti'}.json`;
+  const getURL = () => `${dataBase}${state.dataset}_${daily?'day_ssti':state.product==='d20'?'mon_d20i':'mon_ssti'}.json`;
+  const getClassificationURL = () => `${dataBase}${state.classificationDataset}_classify_enso.json`;
+  const dataURL = (product,dataset) => `${dataBase}${dataset}_${daily?'day_ssti':product==='d20'?'mon_d20i':'mon_ssti'}.json`;
   async function getData(product=state.product,dataset=state.dataset) {
     const url = dataURL(product,dataset);
     if (!cache.has(url)) {
@@ -175,7 +179,7 @@
   const panelConfig = id => panelConfigs.get(id);
   const panelSource = id => panelSources.get(id) || json;
   async function getClassification(dataset=state.classificationDataset) {
-    const url = `../data/${dataset}_classify_enso.json`;
+    const url = `${dataBase}${dataset}_classify_enso.json`;
     if (!cache.has(url)) {
       const response = await fetch(url);
       if (!response.ok) throw Error(`${response.status} loading ${url}. Generate ENSO classifications first.`);
@@ -443,7 +447,7 @@
       hovertemplate:`${date}<br>%{y:.2f} ${units}<extra>Latest observation</extra>`
     };
   }
-  async function downloadTightSvg(graph,filename,padding=8) {
+  async function downloadTightSvg(graph,filename,header={},padding=8) {
     const dataUrl=await Plotly.toImage(graph,{format:'svg'});
     const svgText=await fetch(dataUrl).then(response=>response.text());
     const svgDocument=new DOMParser().parseFromString(svgText,'image/svg+xml');
@@ -477,10 +481,12 @@
       const x=box.x-padding;
       const y=box.y-padding;
       const width=box.width+padding*2;
-      const height=box.height+padding*2;
+      const headerHeight=header.title ? 40 : 0;
+      const height=box.height+padding*2+headerHeight;
       if (!(width>0 && height>0)) throw new Error('Unable to measure SVG contents');
 
-      svg.setAttribute('viewBox',`${x} ${y} ${width} ${height}`);
+      const croppedY=y-headerHeight;
+      svg.setAttribute('viewBox',`${x} ${croppedY} ${width} ${height}`);
       svg.setAttribute('width',width);
       svg.setAttribute('height',height);
 
@@ -489,10 +495,40 @@
         .filter(isCanvasBackground)
         .forEach(rect=>{
           rect.setAttribute('x',x);
-          rect.setAttribute('y',y);
+          rect.setAttribute('y',croppedY);
           rect.setAttribute('width',width);
           rect.setAttribute('height',height);
         });
+
+      if (header.title) {
+        const svgNs='http://www.w3.org/2000/svg';
+        const group=document.createElementNS(svgNs,'g');
+        const title=document.createElementNS(svgNs,'text');
+        title.setAttribute('x',String(x+width/2));
+        title.setAttribute('y',String(y-23));
+        title.setAttribute('text-anchor','middle');
+        title.setAttribute('font-family','Arial, sans-serif');
+        title.setAttribute('font-size','17');
+        title.setAttribute('font-weight','700');
+        title.setAttribute('fill','#263746');
+        title.textContent=header.title;
+        group.appendChild(title);
+
+        const metadata=document.createElementNS(svgNs,'text');
+        metadata.setAttribute('x',String(x+width/2));
+        metadata.setAttribute('y',String(y-8));
+        metadata.setAttribute('text-anchor','middle');
+        metadata.setAttribute('font-family','Arial, sans-serif');
+        metadata.setAttribute('font-size','12');
+        metadata.setAttribute('fill','#718094');
+        const dataset=document.createElementNS(svgNs,'tspan');
+        dataset.setAttribute('font-weight','700');
+        dataset.textContent=header.dataset;
+        metadata.appendChild(dataset);
+        metadata.appendChild(document.createTextNode(` · Data coverage: ${header.coverage} · Climatology period: ${header.climatology}`));
+        group.appendChild(metadata);
+        svg.insertBefore(group,svg.firstChild);
+      }
     } finally {
       measuringHost.remove();
     }
@@ -549,6 +585,9 @@
       const plot = container.querySelector(`.cm-index-panel[data-index="${id}"] .cm-index-plot`);
       const variable = metadataFor(source,index);
       const indexName = variable.long_name || source.metadata.index_names?.[index] || index;
+      const datasetName = source.metadata.dataset || config.dataset;
+      const coverage = `${source.time[0]} – ${source.time.at(-1)}`;
+      const climatology = source.metadata.climatology_period || '1991-2020';
       const units = variable.units ? ` (${variable.units})` : '';
       const quantity = variable.kind === 'SST' ? 'Temperature'
         : variable.kind === 'WWV' ? 'WWV'
@@ -566,8 +605,8 @@
         margin:{l:105,r:28,t:76,b:145},
         paper_bgcolor:'#fff',plot_bgcolor:'#fff',
         font:{family:'Arial, sans-serif',size:13,color:'#263746'},
-        title:{text:`<b>${indexName}</b> <span style="font-size:17px;color:#718094">(${source.metadata.dataset || config.dataset}, ${source.metadata.climatology_period || '1991-2020'})</span>`,
-          x:0.5,xref:'container',y:0.94,yref:'container',
+        title:{text:`<b>${indexName}</b>`,
+          x:0.5,xref:'container',y:0.93,yref:'container',
           xanchor:'center',yanchor:'top',font:{family:'Arial, sans-serif',size:17,color:'#263746'}},
         xaxis:seasonal?{
           title:{text:daily
@@ -597,11 +636,16 @@
           line:{color:'#A7B2BF',width:1,dash:'dot'}}]:[],
         legend:{orientation:'h',x:0,xanchor:'left',y:-0.32,yanchor:'top',maxheight:0.2,
           font:{size:12,color:'#34495A'},bgcolor:'rgba(255,255,255,0)',borderwidth:0},
-        annotations:[{text:'Image credit: Sen Zhao, SOEST, University of Hawaiʻi at Mānoa',
+        annotations:[{text:`<b>${datasetName}</b> · Data coverage: ${coverage} · Climatology period: ${climatology}`,
+          x:0.5,xref:'paper',y:1.01,yref:'paper',xanchor:'center',yanchor:'bottom',
+          showarrow:false,align:'center',bgcolor:'rgba(255,255,255,.78)',borderpad:3,
+          font:{family:'Arial, sans-serif',size:12,color:'#718094'}},
+          {text:'Image credit: Sen Zhao, SOEST, University of Hawaiʻi at Mānoa',
           x:0.99,xref:'paper',y:0.01,yref:'paper',xanchor:'right',yanchor:'bottom',
           showarrow:false,align:'right',bgcolor:'rgba(255,255,255,.78)',borderpad:3,
           font:{family:'Arial, sans-serif',size:10,color:'#7A8794'}}],
         hovermode:'closest',
+        datarevision:`${state.mode}-${state.view}-${Date.now()}`,
         uirevision:`${config.product}-${config.dataset}-${index}-${state.mode}-${state.view}-${windowRevision}`};
       Plotly.react(plot,traces,layout,
         {responsive:true,displaylogo:false,showSendToCloud:false,
@@ -706,10 +750,6 @@
     }
     return 'Latest unavailable';
   }
-  function stats() {
-    el('cm-stats').innerHTML =
-      `Data coverage: ${json.time[0]} – ${json.time.at(-1)} · Reference period: ${json.metadata.climatology_period}`;
-  }
   async function load() {
     setStatus('Loading climate data…');
     try {
@@ -753,7 +793,7 @@
       el('cm-strength').disabled=!classification;
       el('cm-method').disabled=!classification;
       if (!classification) {state.phase='all';el('cm-phase').value='all';}
-      setStatus('');stats();renderYears();draw();
+      setStatus('');renderYears();draw();
     } catch(err) {setStatus(`Unable to load dataset: ${err.message}`);console.error(err);}
   }
   for (const [id,key] of [['cm-dataset','dataset'],['cm-mode','mode'],
@@ -762,7 +802,7 @@
     el(id).addEventListener('change',async e=>{
       state[key]=e.target.value;
       if (key==='dataset') await load();
-      else {if(['phase','strength','method'].includes(key))renderYears();stats();draw();}
+      else {if(['phase','strength','method'].includes(key))renderYears();draw();}
     });
   }
   if (!daily && products.length > 1) {
@@ -807,7 +847,7 @@
     panelConfigs.set(nextId,{id:nextId,product:current.product,dataset:current.dataset,index});
     panelSources.set(nextId,json);
     state.index = index;
-    syncPanelControls(); stats(); draw();
+    syncPanelControls(); draw();
   });
   el('cm-add-panel').addEventListener('click', async () => {
     const product=el('cm-add-product').value;
@@ -823,7 +863,7 @@
     panelConfigs.delete(id);
     panelSources.delete(id);
     state.index = panelConfig(state.indices[0])?.index;
-    syncPanelControls(); stats(); draw();
+    syncPanelControls(); draw();
   });
   function updatePalettePreview() {
     el('cm-palette-preview').innerHTML = palette.map(color =>

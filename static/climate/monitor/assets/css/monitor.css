@@ -9,11 +9,50 @@
 .cm-toolbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:18px 0}
 .cm-toolbar label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:650;color:#42566d}
 .cm-toolbar select,.cm-toolbar input{border:1px solid #c8d3df;border-radius:8px;padding:10px 11px;width:100%;min-width:0;background:white;color:#1b2b3d;font-size:14px}
-.cm-stats{display:flex;gap:20px;flex-wrap:wrap;background:#f4f7fa;padding:12px 15px;border-radius:8px;font-size:12px;color:#586d82}
-.cm-stats b{color:#263a51;margin-right:6px}
 .cm-download,#climate-monitor button:not(.modebar-btn):not(.cm-year){font:inherit;border:1px solid #cad5e0;background:#fff;border-radius:8px;padding:8px 12px;color:#254766;cursor:pointer;text-decoration:none}
 .cm-download:hover,#climate-monitor button:not(.modebar-btn):not(.cm-year):hover{background:#edf4fb}
-#climate-monitor .cm-sidebar-download{display:block;margin-top:12px;text-align:center}
+#climate-monitor .cm-sidebar-download{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:40px;
+  margin-top:14px;
+  padding:9px 12px;
+  border:1px solid #9bb9d4;
+  border-radius:9px;
+  background:#edf5fc;
+  color:#1e5d89;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.01em;
+  text-align:center;
+  text-decoration:none !important;
+  box-shadow:0 2px 6px rgba(28,75,112,.08);
+  transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+#climate-monitor .cm-sidebar-download:hover{
+  background:#dcecf9;
+  border-color:#6f9fc5;
+  box-shadow:0 4px 10px rgba(28,75,112,.13);
+  transform:translateY(-1px);
+  text-decoration:none !important;
+}
+#climate-monitor .cm-sidebar-download:focus-visible{
+  outline:3px solid rgba(63,81,181,.3);
+  outline-offset:2px;
+}
+#climate-monitor .cm-download-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:21px;
+  height:21px;
+  border:1px solid currentColor;
+  border-radius:50%;
+  font-size:16px;
+  line-height:1;
+}
 #cm-plot{width:100%;min-height:500px}
 #cm-status{color:#a33b38;font-size:13px;margin-top:8px}
 .cm-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0 13px}
@@ -23,7 +62,7 @@
 #climate-monitor .cm-year.selected{font-weight:800;background:#dfeefa;border-color:#5484af;color:#123e67}
 .cm-note{margin-top:12px;line-height:1.6}
 @media(max-width:850px){.cm-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.cm-top{flex-wrap:wrap}}
-@media(max-width:520px){.cm-panel{padding:13px}.cm-toolbar{grid-template-columns:1fr}#cm-plot{min-height:400px}.cm-stats{gap:8px}#climate-monitor h2{font-size:21px}}
+@media(max-width:520px){.cm-panel{padding:13px}.cm-toolbar{grid-template-columns:1fr}#cm-plot{min-height:400px}#climate-monitor h2{font-size:21px}}
 
 /* Climate monitor pages use the available browser width (Material/Zensical). */
 @media (min-width: 900px) {
@@ -196,7 +235,6 @@
 #climate-monitor .cm-main { padding:10px; }
 #climate-monitor .cm-main-head { margin-bottom:8px; }
 #climate-monitor .cm-main-head .cm-kicker { font-size:13px; }
-#climate-monitor .cm-stats { font-size:14px; padding:9px 12px; }
 #climate-monitor .cm-workspace { grid-template-columns:minmax(250px,290px) minmax(0,1fr); }
 #climate-monitor .cm-sidebar { padding:15px; }
 
@@ -280,15 +318,6 @@ body:has(#climate-monitor) {
 #climate-monitor .cm-panel-actions button { font-size:11px; padding:6px 8px; }
 #climate-monitor .cm-sub,
 #climate-monitor .cm-note { font-size:12px; }
-#climate-monitor .cm-stats { font-size:12px; }
-#climate-monitor .cm-stats {
-  display:block;
-  background:transparent;
-  padding:0 2px;
-  margin:-4px 0 8px;
-  color:#718094;
-  font-size:11px;
-}
 /* Final visual pass: a narrow control rail and calm event-year palette. */
 @media(min-width:901px) {
   #climate-monitor .cm-workspace {
