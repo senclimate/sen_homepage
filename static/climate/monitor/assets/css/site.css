@@ -1,0 +1,96 @@
+/* Shared Climate Monitor site shell. */
+:root {
+  --cm-site-ink:#1d3042;
+  --cm-site-muted:#66788b;
+  --cm-site-line:#dfe7ef;
+  --cm-site-surface:#ffffff;
+  --cm-site-bg:#f4f7fb;
+}
+body {
+  background:var(--cm-site-bg);
+  color:var(--cm-site-ink);
+}
+.md-header { display:none !important; }
+.md-tabs {
+  background:#f7f9fb;
+  color:#40566b;
+  border-bottom:1px solid var(--cm-site-line);
+  position:relative;
+}
+.md-tabs__link {
+  color:#40566b;
+  opacity:1;
+  border-bottom:3px solid transparent;
+}
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color:#176b9b;
+  opacity:1;
+  border-bottom-color:#2383b8;
+}
+.md-grid { max-width:none; }
+.md-main__inner {
+  max-width:none;
+  margin-top:0;
+  padding-top:0;
+}
+.md-main { padding-top:0; }
+body:not(:has(#climate-monitor)) .md-sidebar--primary,
+body:not(:has(#climate-monitor)) .md-sidebar--secondary {
+  display:none;
+}
+body:not(:has(#climate-monitor)) .md-content {
+  grid-column:1 / -1;
+  width:100%;
+}
+.md-content__inner {
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:12px 24px 48px;
+}
+body:has(.md-content__inner a[href="assets/css/site.css"]) .md-content__inner > h1,
+body:has(.md-content__inner a[href="../assets/css/site.css"]) .md-content__inner > h1 {
+  display:none;
+}
+.md-content h1 {
+  color:var(--cm-site-ink);
+  font-size:clamp(2rem,4vw,3.1rem);
+  letter-spacing:-.035em;
+  margin-bottom:12px;
+}
+.md-content h2 {
+  color:#274f6d;
+  border-bottom:1px solid var(--cm-site-line);
+  padding-bottom:8px;
+  margin-top:38px;
+}
+.md-content p, .md-content li { color:#465b70; line-height:1.7; }
+.md-content a { color:#146b91; }
+.md-content table {
+  display:table;
+  width:100%;
+  background:var(--cm-site-surface);
+  border:1px solid var(--cm-site-line);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 24px rgba(28,54,78,.05);
+}
+.md-content table th { background:#edf4f8; color:#294c67; }
+.md-content code { background:#eaf1f5; color:#31566f; }
+body:has(#climate-monitor) .md-content__inner {
+  max-width:none;
+  padding:6px 12px 40px;
+}
+body:has(#climate-monitor) .md-grid { max-width:none; }
+@media(max-width:700px) {
+  .md-tabs {
+    display:block;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .md-tabs::-webkit-scrollbar { display:none; }
+  .md-tabs__list { min-width:max-content; }
+  .md-content__inner { padding:10px 16px 36px; }
+  body:has(#climate-monitor) .md-content__inner { padding:4px 6px 28px; }
+}

@@ -61,21 +61,25 @@
   url        = "climate/xro"
   weight     = 61
   parent = "climate"
-  
+
+[[main]]
+  name   = "Interactive Climate Monitor"
+  url    = "climate/monitor/"
+  weight = 62
+  parent = "climate"
+
+
 [[main]]
   name       = "Climate Atlas"
   url        = "climate/atlas"
-  weight     = 62
+  weight     = 63
   parent = "climate"
   
 [[main]]
   name       = "Climate Monitoring"
   url        = "climate/monitoring"
-  weight     = 63
+  weight     = 64
   parent = "climate"
-
-
-
 
 [[main]]
   name = "Posts"
