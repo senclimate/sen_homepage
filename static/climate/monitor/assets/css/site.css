@@ -29,6 +29,28 @@ body {
   opacity:1;
   border-bottom-color:#fff;
 }
+/* Keep the site-level link separate from the monitor tabs. */
+.md-tabs__list {
+  display:flex;
+  align-items:center;
+}
+.md-tabs__item:last-child {
+  margin-left:auto;
+}
+.md-tabs__item:last-child .md-tabs__link {
+  margin:6px 0;
+  padding:7px 14px;
+  border:1px solid rgba(255,255,255,.75);
+  border-radius:999px;
+  background:rgba(255,255,255,.14);
+  font-weight:600;
+  line-height:1.2;
+}
+.md-tabs__item:last-child .md-tabs__link:hover {
+  background:#fff;
+  color:var(--cm-brand-blue);
+  border-bottom-color:rgba(255,255,255,.75);
+}
 .md-footer { background:var(--cm-brand-blue); color:rgba(255,255,255,.92); }
 .md-footer-meta { background:rgba(0,0,0,.12); color:rgba(255,255,255,.92); }
 .md-footer a,
