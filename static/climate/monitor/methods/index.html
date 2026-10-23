@@ -414,6 +414,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Definitions of climate indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oras5-thermocline-depth-proxy-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ORAS5 thermocline-depth proxy indices
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -599,6 +616,23 @@
       </span>
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Definitions of climate indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oras5-thermocline-depth-proxy-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ORAS5 thermocline-depth proxy indices
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -797,39 +831,23 @@ changing that order reverses the sign.</p>
 </tr>
 <tr>
 <td>NPMM</td>
-<td>SST in 10°N–25°N, 160°W–120°W, following <a href="#references">Zhao et al. (2024)</a> and <a href="#references">Richter et al. (2022)</a>.</td>
+<td>SST in 10°N–25°N, 160°W–120°W, following <a href="#references">Zhao et al. (2024)</a>, slightly revised from <a href="#references">Richter et al. (2022)</a>.</td>
 </tr>
 <tr>
 <td>SPMM</td>
 <td>SST in 25°S–15°S, 110°W–90°W, following <a href="#references">Zhang et al. 2014</a>.</td>
 </tr>
 <tr>
-<td>WIO (IOD west)</td>
-<td>SST in 10°S–10°N, 50°E–70°E.</td>
-</tr>
-<tr>
-<td>EIO (IOD east)</td>
-<td>SST in 10°S–0°, 90°E–110°E.</td>
-</tr>
-<tr>
-<td>IOD</td>
-<td>WIO − EIO. The western and eastern boxes follow the conventional dipole-mode regions (see <a href="https://doi.org/10.1038/43854">Saji et al., 1999</a>).</td>
+<td>Indian Ocean dipole (IOD)</td>
+<td>WIO − EIO: 10°S–10°N, 50°E–70°E minus 10°S–0°, 90°E–110°E, following the conventional dipole-mode regions (<a href="#references">Saji et al., 1999</a>).</td>
 </tr>
 <tr>
 <td>Indian Ocean basin (IOB)</td>
 <td>SST in 20°S–20°N, 40°E–100°E (<a href="#references">Xie et al., 2009</a>).</td>
 </tr>
 <tr>
-<td>Southern Indian Ocean west (SIODw)</td>
-<td>SST in 25°S–10°S, 65°E–85°E.</td>
-</tr>
-<tr>
-<td>Southern Indian Ocean east (SIODe)</td>
-<td>SST in 30°S–5°S, 90°E–120°E.</td>
-</tr>
-<tr>
-<td>SIOD</td>
-<td>SIODw − SIODe (<a href="#references">Jo et al., 2022</a>).</td>
+<td>Southern Indian Ocean dipole (SIOD)</td>
+<td>SIODw − SIODe: 25°S–10°S, 65°E–85°E minus 30°S–5°S, 90°E–120°E (<a href="#references">Jo et al., 2022</a>).</td>
 </tr>
 <tr>
 <td>Tropical North Atlantic (TNA)</td>
@@ -841,7 +859,7 @@ changing that order reverses the sign.</p>
 </tr>
 <tr>
 <td>South Atlantic subtropical dipole (SASD)</td>
-<td>SASD_SW − SASD_NE: 45°S–35°S, 60°W–0° minus 30°S–20°S, 40°W–20°E.</td>
+<td>SASD_SW − SASD_NE: 45°S–35°S, 60°W–0° minus 30°S–20°S, 40°W–20°E, following <a href="#references">Ham et al. (2021)</a> and <a href="#references">Rodrigues et al. (2015)</a>.</td>
 </tr>
 <tr>
 <td>TropAve SST</td>
@@ -849,7 +867,7 @@ changing that order reverses the sign.</p>
 </tr>
 <tr>
 <td>GlobeAve SST</td>
-<td>SST over 60°S–60°N, all longitudes. This is the global reference-region average used in the configured SenPy index suite; it is not the North Atlantic AMO index.</td>
+<td>SST over 60°S–60°N, all longitudes.</td>
 </tr>
 <tr>
 <td>Southern Ocean SST</td>
@@ -858,6 +876,74 @@ changing that order reverses the sign.</p>
 </tbody>
 </table>
 <p>In particular, the PMM indices here are regional SST means, not EOF-based indices.</p>
+<h3 id="oras5-thermocline-depth-proxy-indices">ORAS5 thermocline-depth proxy indices<a class="headerlink" href="#oras5-thermocline-depth-proxy-indices" title="Permanent link">&para;</a></h3>
+<p>The monthly ORAS5 D20 product uses the depth of the 20°C isotherm as a
+thermocline-depth indicator. The indices below are cosine-of-latitude-weighted
+regional means of that D20 field, reported in metres. They are area-averaged thermocline-depth proxies, not volumetric warm-water-volume (WWV) estimates;
+the historical <code>H</code> names are retained for compatibility with the generated
+products.</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Operational definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hm</td>
+<td>D20 over 5°S–5°N, 120°E–80°W (equatorial Pacific mean).</td>
+</tr>
+<tr>
+<td>H0w</td>
+<td>D20 over 5°S–5°N, 120°E–155°W (western equatorial Pacific).</td>
+</tr>
+<tr>
+<td>H0e</td>
+<td>D20 over 5°S–5°N, 155°W–80°W (eastern equatorial Pacific).</td>
+</tr>
+<tr>
+<td>H1w</td>
+<td>D20 over 5°S–5°N, 120°E–160°W (western Pacific).</td>
+</tr>
+<tr>
+<td>H1e</td>
+<td>D20 over 5°S–5°N, 160°W–80°W (eastern Pacific).</td>
+</tr>
+<tr>
+<td>H_Nino34</td>
+<td>D20 over 5°S–5°N, 170°W–120°W (Niño3.4 region).</td>
+</tr>
+<tr>
+<td>Hm_Ind</td>
+<td>D20 over 2°S–2°N, 40°E–100°E (equatorial Indian Ocean).</td>
+</tr>
+<tr>
+<td>H2w</td>
+<td>D20 over 5°S–5°N, 120°E–180° (western Pacific).</td>
+</tr>
+<tr>
+<td>H2e</td>
+<td>D20 over 5°S–5°N, 180°–80°W (eastern Pacific).</td>
+</tr>
+<tr>
+<td>Hn2_10</td>
+<td>D20 over 2°N–10°N, 120°E–110°W (northern off-equatorial Pacific).</td>
+</tr>
+<tr>
+<td>Hs2_10</td>
+<td>D20 over 10°S–2°S, 120°E–80°W (southern off-equatorial Pacific).</td>
+</tr>
+<tr>
+<td>H0sw</td>
+<td>D20 over 15°S–5°S, 120°E–170°W (southern western Pacific).</td>
+</tr>
+<tr>
+<td>H0wsw</td>
+<td>D20 over 15°S–5°N, 120°E–170°W (western Pacific, extended latitude band).</td>
+</tr>
+</tbody>
+</table>
 <h2 id="enso-event-classification">ENSO event classification<a class="headerlink" href="#enso-event-classification" title="Permanent link">&para;</a></h2>
 <p>ENSO event years and strengths are calculated separately for each dataset from its Niño3.4 series. The monitor provides two methods:</p>
 <ol>
@@ -895,6 +981,8 @@ shows the regional SST index.</p>
 <li>Jo et al. (2022), <em>Nature Communications</em> 13. <a href="https://doi.org/10.1038/s41467-022-34721-8">DOI</a></li>
 <li>Enfield et al. (1999), <em>Journal of Geophysical Research: Oceans</em> 104.</li>
 <li>Nnamchi et al. (2015), <em>Nature Communications</em> 6, 8895. <a href="https://doi.org/10.1038/ncomms9895">DOI</a></li>
+<li>Ham et al. (2021), <em>Geophysical Research Letters</em> 48, e2021GL093338. <a href="https://doi.org/10.1029/2021GL093338">DOI</a></li>
+<li>Rodrigues, Campos &amp; Haarsma (2015), <em>Journal of Climate</em> 28, 2691–2705. <a href="https://doi.org/10.1175/JCLI-D-14-00483.1">DOI</a></li>
 <li>Huang et al. (2017), <em>Journal of Climate</em> 30, 8179–8205. <a href="https://doi.org/10.1175/JCLI-D-16-0836.1">DOI</a></li>
 <li>Huang et al. (2021), <em>Journal of Climate</em> 34, 2923–2939. <a href="https://doi.org/10.1175/JCLI-D-20-0166.1">DOI</a></li>
 <li>Rayner et al. (2003), <em>Journal of Geophysical Research</em> 108(D14), 4407. <a href="https://doi.org/10.1029/2002JD002670">DOI</a></li>

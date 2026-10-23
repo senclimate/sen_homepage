@@ -512,3 +512,44 @@ body:has(#climate-monitor) .md-main__inner {
   body:has(#climate-monitor) { overflow-x:clip; }
   #climate-monitor { max-width:none; width:100%; }
 }
+
+/* Mobile-only controls: keep the chart near the top of the viewport.
+   Desktop layout and Plotly sizing remain unchanged above this breakpoint. */
+.cm-mobile-toggle { display:none; }
+@media(max-width:760px) {
+  #climate-monitor .cm-mobile-toggle {
+    display:block;
+    width:100%;
+    margin-top:10px;
+    padding:9px 11px;
+    border:1px solid #9bb9d4;
+    border-radius:8px;
+    background:#edf5fc;
+    color:#1e5d89;
+    font-size:13px;
+    font-weight:700;
+    text-align:center;
+  }
+  #climate-monitor .cm-year-panel:not(.cm-mobile-open) > :not(h3):not(.cm-mobile-toggle) {
+    display:none;
+  }
+  #climate-monitor .cm-sidebar-head {
+    min-width:0;
+  }
+  #climate-monitor .cm-year-panel > .cm-mobile-toggle {
+    margin:5px 0 0;
+  }
+  #climate-monitor .cm-main {
+    padding:4px;
+  }
+  #climate-monitor .cm-index-panel {
+    border-radius:9px;
+  }
+  #climate-monitor .cm-panels {
+    margin-top:4px;
+    gap:8px;
+  }
+  #climate-monitor .cm-panel-actions {
+    margin-top:10px;
+  }
+}

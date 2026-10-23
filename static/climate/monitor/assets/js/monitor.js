@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <aside class="cm-year-sidebar" aria-label="Highlighted year controls">
           <div class="cm-control-group cm-year-panel" id="cm-year-panel">
             <h3>Highlight years</h3>
+            <button type="button" class="cm-mobile-toggle" id="cm-years-toggle" aria-expanded="false" aria-controls="cm-year-panel">Show year controls</button>
             <p class="cm-sub">Click a curve or choose years below</p>
             <div class="cm-year-legend" aria-label="Year classification legend"><span><i class="cm-legend-swatch cm-legend-neutral"></i>Neutral</span><span><i class="cm-legend-swatch cm-legend-el-nino"></i>El Niño</span><span><i class="cm-legend-swatch cm-legend-la-nina"></i>La Niña</span></div>
             <div class="cm-toolbar cm-enso-toolbar">
@@ -167,6 +168,49 @@ document.addEventListener('DOMContentLoaded', () => {
       </aside>
     </div>`;
   const el = id => root.querySelector('#'+id);
+  const mobileQuery = window.matchMedia('(max-width: 760px)');
+  let lastMobileLayout = mobileQuery.matches;
+  function setMobilePanel(panel, button, open) {
+    panel.classList.toggle('cm-mobile-open', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.textContent = open ? 'Hide year controls' : 'Show year controls';
+    if (mobileQuery.matches) {
+      panel.querySelectorAll(':scope > :not(h3):not(.cm-mobile-toggle)')
+        .forEach(child => { child.hidden = !open; });
+    }
+  }
+  function initializeMobilePanels() {
+    const years = el('cm-year-panel');
+    const yearsButton = el('cm-years-toggle');
+    if (!years || !yearsButton) return;
+    setMobilePanel(years, yearsButton, false);
+  }
+  function resizePlots() {
+    root.querySelectorAll('.cm-index-plot').forEach(plot => {
+      if (window.Plotly && plot.data) window.Plotly.Plots.resize(plot);
+    });
+  }
+  function refreshAfterMobileToggle() {
+    requestAnimationFrame(() => {
+      resizePlots();
+      requestAnimationFrame(resizePlots);
+    });
+  }
+  initializeMobilePanels();
+  el('cm-years-toggle').addEventListener('click', () => {
+    const button = el('cm-years-toggle');
+    setMobilePanel(el('cm-year-panel'), button, button.getAttribute('aria-expanded') !== 'true');
+    refreshAfterMobileToggle();
+  });
+  window.addEventListener('resize', () => {
+    const isMobile = mobileQuery.matches;
+    if (isMobile !== lastMobileLayout) {
+      lastMobileLayout = isMobile;
+      draw();
+    } else {
+      resizePlots();
+    }
+  });
   const setStatus = s => {el('cm-status').textContent = s;};
   const getURL = () => `${dataBase}${state.dataset}_${daily?'day_ssti':state.product==='d20'?'mon_d20i':'mon_ssti'}.json`;
   const getClassificationURL = () => `${dataBase}${state.classificationDataset}_classify_enso.json`;
@@ -548,6 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function draw() {
     if (!json || !window.Plotly) return;
+    const mobile = mobileQuery.matches;
     const seasonal=state.view==='seasonal'||isClimatologyMode();
     root.dataset.view = seasonal ? 'seasonal' : 'timeline';
     const perYear = daily ? 365 : 12;
@@ -606,31 +651,31 @@ document.addEventListener('DOMContentLoaded', () => {
       const latestTrace = latestPointTrace(source,index,seasonal);
       if (latestTrace) traces.push(latestTrace);
       const layout={template:'plotly_white',autosize:true,
-        height:daily?460:(seasonal?480:460),
-        margin:{l:105,r:28,t:76,b:145},
+        height:mobile?(daily?500:(seasonal?520:500)):(daily?460:(seasonal?480:460)),
+        margin:mobile?{l:58,r:8,t:58,b:96}:{l:105,r:28,t:76,b:145},
         paper_bgcolor:'#fff',plot_bgcolor:'#fff',
-        font:{family:'Arial, sans-serif',size:13,color:'#263746'},
+        font:{family:'Arial, sans-serif',size:mobile?11:13,color:'#263746'},
         title:{text:`<b>${indexName}</b>`,
           x:0.5,xref:'container',y:0.93,yref:'container',
-          xanchor:'center',yanchor:'top',font:{family:'Arial, sans-serif',size:17,color:'#263746'}},
+          xanchor:'center',yanchor:'top',font:{family:'Arial, sans-serif',size:mobile?14:17,color:'#263746'}},
         xaxis:seasonal?{
           title:{text:daily
             ?(span===2?'Month (Year 0 → Year +1)':'Day of year')
             :`Month (${months[monthsInWindow[0].month]} Year 0 → ${months[monthsInWindow.at(-1).month]} Year +${monthsInWindow.at(-1).yearOffset})`,
-            font:{family:'Arial, sans-serif',size:14,color:'#34495A'},standoff:18},
+            font:{family:'Arial, sans-serif',size:mobile?11:14,color:'#34495A'},standoff:mobile?10:18},
           tickmode:'array',tickvals,ticktext,tickangle:pointCount>12?-50:0,
-          tickfont:{family:'Arial, sans-serif',size:12,color:'#526170'},
+          tickfont:{family:'Arial, sans-serif',size:mobile?9:12,color:'#526170'},
           range:[0.5,pointCount+0.5],gridcolor:'#EEF1F4',gridwidth:0.7,automargin:true,
           ticks:'outside',ticklen:5,tickwidth:1.2,tickcolor:'#536575',
           showline:true,linecolor:'#536575',linewidth:1.4,mirror:false}:
-          {title:{text:'Year',font:{family:'Arial, sans-serif',size:14,color:'#34495A'},standoff:18},
-            type:'date',tickfont:{family:'Arial, sans-serif',size:12,color:'#526170'},
+          {title:{text:'Year',font:{family:'Arial, sans-serif',size:mobile?11:14,color:'#34495A'},standoff:mobile?10:18},
+            type:'date',tickfont:{family:'Arial, sans-serif',size:mobile?9:12,color:'#526170'},
             gridcolor:'#EEF1F4',gridwidth:0.7,automargin:true,
             ticks:'outside',ticklen:5,tickwidth:1.2,tickcolor:'#536575',
             showline:true,linecolor:'#536575',linewidth:1.4,mirror:false},
-        yaxis:{title:{text:wrapAxisTitle(`${modeQuantity}${units}`),
-            font:{family:'Arial, sans-serif',size:14,color:'#34495A'},standoff:14},
-          tickfont:{family:'Arial, sans-serif',size:12,color:'#526170'},
+        yaxis:{title:{text:wrapAxisTitle(`${modeQuantity}${units}`, mobile?30:42),
+            font:{family:'Arial, sans-serif',size:mobile?11:14,color:'#34495A'},standoff:mobile?7:14},
+          tickfont:{family:'Arial, sans-serif',size:mobile?9:12,color:'#526170'},
           automargin:true,gridcolor:'#E7EBEF',gridwidth:0.8,
           zeroline:true,zerolinecolor:'#7D8995',zerolinewidth:1.2,
           ticks:'outside',ticklen:5,tickwidth:1.2,tickcolor:'#536575',
@@ -639,16 +684,16 @@ document.addEventListener('DOMContentLoaded', () => {
           x0:daily?perYear+0.5:monthsInWindow.findIndex(item=>item.yearOffset>0)+0.5,
           x1:daily?perYear+0.5:monthsInWindow.findIndex(item=>item.yearOffset>0)+0.5,y0:0,y1:1,
           line:{color:'#A7B2BF',width:1,dash:'dot'}}]:[],
-        legend:{orientation:'h',x:0,xanchor:'left',y:-0.32,yanchor:'top',maxheight:0.2,
-          font:{size:12,color:'#34495A'},bgcolor:'rgba(255,255,255,0)',borderwidth:0},
+        legend:{orientation:'h',x:0,xanchor:'left',y:mobile?-0.28:-0.32,yanchor:'top',maxheight:0.2,
+          font:{size:mobile?9:12,color:'#34495A'},bgcolor:'rgba(255,255,255,0)',borderwidth:0},
         annotations:[{text:`<b>${datasetName}</b> · Data coverage: ${coverage} · Climatology period: ${climatology}`,
           x:0.5,xref:'paper',y:1.01,yref:'paper',xanchor:'center',yanchor:'bottom',
           showarrow:false,align:'center',bgcolor:'rgba(255,255,255,.78)',borderpad:3,
-          font:{family:'Arial, sans-serif',size:12,color:'#718094'}},
+          font:{family:'Arial, sans-serif',size:mobile?9:12,color:'#718094'}},
           {text:'Image credit: Sen Zhao, SOEST, University of Hawaiʻi at Mānoa',
           x:0.99,xref:'paper',y:0.01,yref:'paper',xanchor:'right',yanchor:'bottom',
           showarrow:false,align:'right',bgcolor:'rgba(255,255,255,.78)',borderpad:3,
-          font:{family:'Arial, sans-serif',size:10,color:'#7A8794'}}],
+          font:{family:'Arial, sans-serif',size:mobile?8:10,color:'#7A8794'}}],
         hovermode:'closest',
         datarevision:`${state.mode}-${state.view}-${Date.now()}`,
         uirevision:`${config.product}-${config.dataset}-${index}-${state.mode}-${state.view}-${windowRevision}`};
