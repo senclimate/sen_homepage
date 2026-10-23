@@ -1,4 +1,9 @@
 /* Climate Monitor: data-only JSON -> browser-side Plotly figures. */
+document.addEventListener('DOMContentLoaded', () => {
+  const year = document.getElementById('copyright-year');
+  if (year) year.textContent = String(new Date().getFullYear());
+});
+
 (() => {
   const root = document.getElementById('climate-monitor');
   if (!root) return;
