@@ -64,7 +64,9 @@
             {{ $figure := resources.Get (printf "media/%s" .) }}
             {{ if $figure }}
               <figure class="hero-figure">
+                {{ with $item.figure_link }}<a href="{{ . }}" aria-label="Open {{ $item.title | plainify }}">{{ end }}
                 <img src="{{ $figure.RelPermalink }}" alt="{{ $item.title | plainify }}" loading="lazy">
+                {{ with $item.figure_link }}</a>{{ end }}
               </figure>
             {{ else }}
               {{ errorf "Couldn't find `%s` in the `assets/media/` folder - please add it." . }}

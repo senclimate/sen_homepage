@@ -27,24 +27,24 @@ height = "110px"
   overlay_color = "rgba(3, 54, 70, .96)"
   overlay_img = ""
   figure_img = "ClimateMonitor_OISSTv2_Nino34_anomaly_5day.svg"
+  figure_link = "climate/monitor/daily/"
 
   content = """
 <p class='hero-kicker'>Daily and monthly climate indices</p>
 <p class='hero-summary'>Explore ENSO, Indian Ocean, and Atlantic climate signals through interactive charts, downloadable data, and chart views.</p>
-<a href='climate/monitor/' class='btn slide-btn slide-btn-primary'><i class='fas fa-chart-line'></i> Open Climate Monitor</a>
-<a href='climate/monitor/methods/' class='btn slide-btn slide-btn-secondary'><i class='fas fa-book-open'></i> Methods</a>
+<a href='climate/monitor/daily/' class='btn slide-btn slide-btn-primary'><i class='fas fa-chart-line'></i> Open Daily Monitor</a>
 """
 
 [[item]]
-  title = "Climate Whiplash Effects Due To Rapidly Intensifying El Niño"
+  title = "Climate Whiplash from Rapidly Intensifying El Niño"
   align = "center"
   overlay_color = "rgba(20, 83, 180, .96)"
   overlay_img = ""
   figure_img = "ClimateModeResonance.png"
 
   content = """
-<p class='hero-kicker'>New research · Nature Communications</p>
-<p class='hero-summary'>Warming can intensify ENSO and synchronize prominent climate modes, with consequences for regional climate predictability and extremes.</p>
+<p class='hero-kicker'>New research published in Nature Communications</p>
+<p class='hero-summary'>Warming can intensify ENSO and synchronize prominent climate modes, with consequences for regional climate extremes.</p>
 <a href='publication/2025_stuecker_nc/' class='btn slide-btn slide-btn-primary'><i class='fas fa-book-open'></i> Read the paper</a>
 <a href='https://www.nature.com/articles/s41467-025-64619-0.pdf' class='btn slide-btn slide-btn-secondary'><i class='fas fa-file-pdf'></i> PDF</a>
 <a href='https://www.soest.hawaii.edu/soestwp/announce/news/climate-whiplash-intensifying-el-nino/' class='btn slide-btn slide-btn-secondary'><i class='fas fa-newspaper'></i> SOEST News</a>

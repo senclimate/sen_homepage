@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #module load hugo
-hugo server --panicOnWarning --disableFastRender --bind 128.171.151.93 --baseURL http://128.171.151.93/ #--i18n-warnings
 
+hugo server --bind 127.0.0.1 --port 1313 --baseURL http://localhost:1313
 
 #hugo server --panicOnWarning --disableFastRender  #--i18n-warnings
 
